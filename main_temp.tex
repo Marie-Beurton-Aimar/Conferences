@@ -15,9 +15,7 @@
 \usepackage{subfig}
 \usepackage{graphicx}
 \usepackage[justification=centering]{caption}
- \usepackage{amsmath}
-\usepackage[linesnumbered,ruled]{algorithm2e}
-%\usepackage{enumitem}
+ 
 %% --------------------------------------------------------------
 %% FONTS CODING ?
 % \usepackage[OT1]{fontenc} % Old fonts
@@ -79,47 +77,22 @@ Morphometry analysis is an important field of image analysis in biology. It is u
 \label{fig1}
 \end{figure}
 
-In recently, we have a lot of techniques to indicate the dominant points such as SIFT, SUFT, ... \cite{•} but the applying them into morphometry analysis is limit in scope. In this paper, we focus on the method to automatically determine the landmarks in 2D biological images (see Fig. 1), specify beetle images. This method is shown as a difference ways to apply the SIFT descriptor for keypoint detection along with the segmentaion and registration techniques.
+In recently, we have a lot of techniques to indicate the dominant points \cite{} but the applying them into morphometry analysis is limit in scope. In this paper, we focus on the method to automatically determine the landmarks in 2D biological images (see Fig. 1), specify beetle images. This method is a combination of principal component analysis (PCA) \cite{} and scale invariant feature transform (SIFT) \cite{•}. It includes three steps: (1) the contours of mandible shape are segment, (2) an iterative PCA is applied to register a source image and a target image and finally (3) the landmarks setting is done by using SIFT descriptor.
 \section{Method}
-For each beetle, the morphometric landmarks have been manually identified on mandibles images by the biologists: 16 and 18 landmarks for each left and right mandible, respectively. The consideration problem is how to detect automatically the landmarks on the mandible image to replace the manual ones. In the whole of the process, a source and a target image are used. The landmarks will be estimated on the target image by using the manual landmarks of the source image. Note, the source image is chosen randomly from the set of images.
+For each beetle, the morphometric landmarks have been manually identified on mandibles images by the biologists: 16 and 18 landmarks for each left and right mandible, respectively. The consideration problem is how to detect automatically the landmarks on the mandible image to replace the manual ones. We propose a process includes three stages (1) segmentation, (2) registration, and (3) detection the landmarks. The Fig. \ref{fig2} shows the summary of the process. In the whole of the process, a source and a target image are used. The landmarks will be estimated on the target image by using the manual landmarks of the source image. Note, the source image is chosen randomly from the set of images.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./images/method}
+    \caption{Overview of the proposed method}
+    \label{fig2}
+\end{figure}
 
 In this section, firstly, we have a summary about the general utilization of SIFT. Then, we will discuss detail about our method with a difference way of SIFT to estimate the landmarks.
 \subsection{SIFT method}
 SIFT method proposed by Lowe\cite{} to extract distinctive invariant feature from images that can use to match between different views of source and target images such as rotation, scale, noise, 3D viewpoint. SIFT method includes four stages: (1) scale-space extrema detection, (2) keypoint localization, (3) orientation assignment, and (4) keypoint descriptor.
 
-In the first stage, a difference of Gaussian (DoG) (Eq. \ref{eq1}) function is applied to identify the interest points on all scale and orientation of image. The keypoints are taken as the maximal and minimal of the result of DoG function at mutliple scale.
-\begin{equation}
-	D(x,y,\sigma) = (G(x,y,k_i\sigma) - G(x,y,k_j\sigma)) * I(x,y)
-	\label{eq1}
-\end{equation}
-Where:
-\begin{itemize}
-	\item $D(x,y,\sigma)$ is the DoG image
-	\item $I(x,y)$ is the original image
-	\item $G(x,y,k\sigma)$ is the Gaussian blur at scale $k\sigma$.
-\end{itemize}
-
-The scale-space extrema detection produces too many kepoint candidates, some of them are unstable. In the second stage of SIFT, the key point candidates are localized and refined by suppress the key points which have the low contrast or are poorly localized along an edge. 
-
-Then, the orientation and gradient magnitude of key points are calculated by applyiing the following equations (Eq. \ref{eq2}):
-\begin{equation}
-\label{eq2}
-\begin{split}
-	m(x,y) &= \sqrt{v_x^2 + v_y^2} \\
-	\theta(x,y)& = tan^{-1}(v_y/v_x) \\
-\end{split}
-\end{equation}
-Where:
-\begin{itemize}
-	\item $v_x = I(x+1,y) - I(x-1,y)$
-	\item $v_y = I(x,y+1) - I(x,y-1)$
-	\item $I(x,y)$ is the gray value at position $(x,y)$ in the image,
-	\item $m(x,y)$ is the gradient magnitude of the pixel at position $(x,y)$,
-	\item $\theta(x,y)$ is the orientation of the pixel at position $(x,y)$.
-\end{itemize} 
-At the end, the descriptor is computed for each key point based on the orientation and gradient magnitude to ensure the invariance to image location, scale, and rotation. First, an orientation histogram with 8 bins is created on $4 \times 4$ pixel neighborhoods. This histogram is computed from the magnitude and orientation values of each pixel in the $4 \times 4$ region. The descriptor around a keypoint is a histogram of a $16 \times 16$ region around it which is combined from the 4 histograms of the $4 \times 4$ subregions. Then, all the values of the histogram are presented as a vector. To reduce the effects of illumination changes, the vector is normalized and applied a threshold of $0.2$ and the vector is again normalized.
-
-show an 
+In the first stage, a difference of Gaussian (DoG) function is applied to identify the interest points on all scale and orientation of image. The key point candidates are localized and refined by suppress the key points which have the low contrast in the second stage. In the third stage, the orientation and gradient magnitude of key points are calculated. At the end, the descriptor is computed for each key point based on the orientation and gradient magnitude.
 
 \begin{figure}[htb]
     \centering
@@ -128,7 +101,7 @@ show an
     \label{fig3}
 \end{figure}
 By applying the original SIFT into our problem, we have succeeded indicating the keypoints in the image (see Fig. \ref{fig3}). But we do not have the result when we try to extract correspondence keypoints between the source and target image. The problem is carried from the choosing the best points from the large set of the candidates. This problem is solved in our method by limit the spatial before applied the SIFT along with changing the size of the grid to calculate the SIFT descriptor.
-\subsection{A difference way of SIFT descriptor}
+\subsection{Proposed method}
 \subsubsection{Image segmentation}
 The first step in the method is segmentation. It is hired to detect the contours belonging to the shape of the mandible. In our case, the Canny algorithm \cite{•} was chosen to finish this step. To use the Canny algorithm, two thresholds value must be provided (lower threshold ($T_{lower}$) and the upper threshold ($T_{upper}$)). As mentioned in \cite{•}, indicating the threshold values is a difficult problem. If the threshold values are unsuitable, the contours could be far with ground truth (fewer contours or more noise). Most often working on Canny, the threshold values are chosen by manual or experiment with a ratio of $T_{lower} = (1/2) \times T_{upper} $. In order to consider a larger range of values, we prefer set $T_{lower} = (1/2) \times T_{upper} $ and the threshold value is determined by analyzing the histogram of image \cite{•}. During Canny computing, the direction of the gradient of each pixel belonging to the contours is kept and will be used later. To finish the segmentation step, a simple algorithm is applied to remove the edge inside the main contours. As shown in Fig. \ref{fig4}, the mandible contours is determined by the Canny algorithm.
 \begin{figure}[htb]
