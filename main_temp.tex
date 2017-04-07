@@ -15,7 +15,9 @@
 \usepackage{subfig}
 \usepackage{graphicx}
 \usepackage[justification=centering]{caption}
- 
+ \usepackage{amsmath}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+%\usepackage{enumitem}
 %% --------------------------------------------------------------
 %% FONTS CODING ?
 % \usepackage[OT1]{fontenc} % Old fonts
@@ -61,13 +63,13 @@ document respecte les contraintes fix{\'e}es ; recopiez le, par
 exemple sous le nom \texttt{monarticle.tex}, et placez votre
 texte aux endroits appropri{\'e}s.}
 
-\englishabstract{Image analysis is a large field of computer vision and it has applied in practice with many application in the different majors such as medicine, machine vision, biology, ... In the past of biology techniques, microscopic techniques were applied to study the structure details, but the current research requires more accuracy in the area, perimeter, localization of the object in the image by using the suitable features. In this content of this paper, we will focus on the problem of setting the landmarks on biological images which are used in many biological studies. The landmarks are indicated by applying a combination of SIFT and PCA. The efficiency of the method is evaluated on two set of images: left and right mandibles of beetle. The complete work is implemented in MAELab and freely available as a library.}
+\englishabstract{Image analysis is a large field of computer vision and it has applied in practice with many application in the different majors such as medicine, machine vision, biology, ... In the past of biology techniques, microscopic techniques were applied to study the structure details, but the current research requires more accuracy in the area, perimeter, localization of the object in the image by using the suitable features. In this content of this paper, we will focus on the problem of setting the landmarks on biological images which are used in many biological studies. The landmarks are indicated by applying a combination of SIFT and some techniques. Besides, we also show a difference way to use SIFT descriptor with another size of the sample region. The efficiency of the method is evaluated on two set of images: left and right mandibles of beetle. The complete work is implemented in MAELab and freely available as a library.}
 
 \begin{document}
 \maketitle
 
 \section{Introduction}
-Morphometry analysis is an important field of image analysis in biology. It is used to characterize the shape variations of the organism. From obtained information, the biologists can evaluate the evolution of the organism or detect the difference between the organisms. Depending on the requirements of the application, the output of analysis process can be the shape, color, pattern,... or the landmarks (or dominant points). The landmarks are the points along an image outline that store a lot of important information about the shape of the image. They are used in many biological studies and included into the classification tasks.
+Morphometry analysis is an important field of image analysis in biology. It is used to characterize the shape variations of the organism. From obtained information, the biologists can evaluate the evolution of the organism or detect the difference between the organisms. Depending on the requirements of the application, the output of analysis process can be the shape, the color, the pattern,... or the landmarks (points of interest). The landmarks are the points along an image outline that store a lot of important information about the shape of the image. The morphometric landmarks are precise points defined by the biologists. They are used in many biological studies and included into the classification tasks. Until now, the morphometric landmarks have been manually identified. The manual identification is time-consuming and that could vary depend on the identifying operator.
 
 \begin{figure}[h]
 \centering
@@ -77,187 +79,131 @@ Morphometry analysis is an important field of image analysis in biology. It is u
 \label{fig1}
 \end{figure}
 
-In recently, we have a lot of techniques to indicate the dominant points \cite{} but the applying them into morphometry analysis is limit in scope. In this paper, we focus on the method to automatically determine the landmarks in 2D biological images (see Fig. 1), specify beetle images. This method is a combination of principal component analysis (PCA) \cite{} and scale invariant feature transform (SIFT) \cite{•}. It includes three steps: (1) the contours of mandible shape are segment, (2) an iterative PCA is applied to register a source image and a target image and finally (3) the landmarks setting is done by using SIFT descriptor.
-\section{Method}
-For each beetle, the morphometric landmarks have been manually identified on mandibles images by the biologists: 16 and 18 landmarks for each left and right mandible, respectively. The consideration problem is how to detect automatically the landmarks on the mandible image to replace the manual ones. We propose a process includes three stages (1) segmentation, (2) registration, and (3) detection the landmarks. The Fig. \ref{fig2} shows the summary of the process. In the whole of the process, a source and a target image are used. The landmarks will be estimated on the target image by using the manual landmarks of the source image. Note, the source image is chosen randomly from the set of images.
-
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.5\textwidth]{./images/method}
-    \caption{Overview of the proposed method}
-    \label{fig2}
-\end{figure}
+In this paper, we focus on the method to automatically determine the landmarks in 2D biological images (see Fig. 1), specifically beetle images. The proposed method consists segmentation, registration, and descriptors comparison techniques. Besides, this method is also shown as a difference ways to apply the SIFT descriptor for keypoint detection. The work is evaluated on the dataset of beetles from Brittany lands with a collection of 293 beetles. For each beetle, a set of landmarks has been manually located by the biologists. In our study, we used that dataset as ground truth to evaluate the position of the automatically estimated landmarks.
+\section{Landmark descriptor}
+For each beetle, the morphometric landmarks have been manually identified on mandibles images by the biologists: 16 and 18 landmarks for each left and right mandible, respectively. The consideration problem is how to detect automatically the landmarks on the mandible image to replace the manual ones. In the whole of the process, a source and a target image are used. The landmarks will be estimated on the target image by using the manual landmarks of the source image. Note, the source image is chosen randomly from the set of images.
 
 In this section, firstly, we have a summary about the general utilization of SIFT. Then, we will discuss detail about our method with a difference way of SIFT to estimate the landmarks.
 \subsection{SIFT method}
-SIFT method proposed by Lowe\cite{} to extract distinctive invariant feature from images that can use to match between different views of source and target images such as rotation, scale, noise, 3D viewpoint. SIFT method includes four stages: (1) scale-space extrema detection, (2) keypoint localization, (3) orientation assignment, and (4) keypoint descriptor.
+\label{secSIFT}
+SIFT method has been proposed by Lowe \cite{lowe1999object, lowe2004distinctive}. It is used to extract distinctive invariant features from the images. Besides, the features from SIFT can use to match between different views of source and target images such as rotation, scale, noise. SIFT method includes four stages: (1) scale-space extrema detection, (2) keypoint localization, (3) orientation assignment, and (4) keypoint descriptor.
 
-In the first stage, a difference of Gaussian (DoG) function is applied to identify the interest points on all scale and orientation of image. The key point candidates are localized and refined by suppress the key points which have the low contrast in the second stage. In the third stage, the orientation and gradient magnitude of key points are calculated. At the end, the descriptor is computed for each key point based on the orientation and gradient magnitude.
-
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.3\textwidth]{./images/mdsift}
-    \caption{SIFT keypoints in an right mandible}
-    \label{fig3}
-\end{figure}
-By applying the original SIFT into our problem, we have succeeded indicating the keypoints in the image (see Fig. \ref{fig3}). But we do not have the result when we try to extract correspondence keypoints between the source and target image. The problem is carried from the choosing the best points from the large set of the candidates. This problem is solved in our method by limit the spatial before applied the SIFT along with changing the size of the grid to calculate the SIFT descriptor.
-\subsection{Proposed method}
-\subsubsection{Image segmentation}
-The first step in the method is segmentation. It is hired to detect the contours belonging to the shape of the mandible. In our case, the Canny algorithm \cite{•} was chosen to finish this step. To use the Canny algorithm, two thresholds value must be provided (lower threshold ($T_{lower}$) and the upper threshold ($T_{upper}$)). As mentioned in \cite{•}, indicating the threshold values is a difficult problem. If the threshold values are unsuitable, the contours could be far with ground truth (fewer contours or more noise). Most often working on Canny, the threshold values are chosen by manual or experiment with a ratio of $T_{lower} = (1/2) \times T_{upper} $. In order to consider a larger range of values, we prefer set $T_{lower} = (1/2) \times T_{upper} $ and the threshold value is determined by analyzing the histogram of image \cite{•}. During Canny computing, the direction of the gradient of each pixel belonging to the contours is kept and will be used later. To finish the segmentation step, a simple algorithm is applied to remove the edge inside the main contours. As shown in Fig. \ref{fig4}, the mandible contours is determined by the Canny algorithm.
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.2\textwidth]{./images/canny2}
-    \caption{The mandible contours after finishing the contours detection}
-    \label{fig4}
-\end{figure}
-\subsubsection{Image registration}
-The input images have been learned with the same scale. But under the camera, the orientation between from a beetle to another one is the difference. In the next step, we consider the registration between a source and a target image.
-
-We have chosen to use PCA \cite{} to determine the rotation and translation parameter values between two images. In this step, we use the lists of contour points as the input. Firstly, the centroid point and principal axis are detected for each image contours. Then, two images are registered by computing the translation and rotation parameter values. The translation is computed as the distance between the centroid points of the source and the target. The rotation angle is the angle between the principal axes of two images. However in some case, the result of the segmentation step could exist the noise, it could affect to the registration step. To improve the registration, we have built up the PCA by iterating until stabilization (PCAI). The Fig. \ref{} shows an example of the results obtained from PCAI. The red contours belong to the source, the black ones are the target contours after one iteration, and the blue contours are the finally resulting contours.
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.2\textwidth]{./images/imreg}
-    \caption{The step in iteration of PCA between the source contours (red) and the target contours}
-    \label{fig5}
-\end{figure}
-\subsubsection{Landmarks estimation}
-The last task in this method is estimating the landmarks of the target image from the manual one of the source image. As mentioned before, we will use the SIFT \cite{*} without the usually way.
-\section{Experiments and result}
-\section{Conclusion and discussion}
-\subsection{\texttt{gretsi} class}
-Your paper should not exceed 4 pages, including tables and
-figures. It should consist of 2 columns each measuring 88mm wide,
-with a gap of 6mm between the columns. We advise you to use the
-\texttt{gretsi.cls} \LaTeXe\ class file to perform automatic page
-setting:
-\begin{verbatim}
-    \documentclass{gretsi}
-\end{verbatim}
-In your file preamble, you have to enter the following informations:
+In the first stage, a difference of Gaussian (DoG) \cite{davidson2006molecular} (Eq. \ref{eq1}) function is applied to identify the interest points on all scale and orientation of image. The keypoints are taken as the maximal and minimal of the result of DoG function at mutliple scale.
+\begin{equation}
+	D(x,y,\sigma) = (G(x,y,k_i\sigma) - G(x,y,k_j\sigma)) * I(x,y)
+	\label{eq1}
+\end{equation}
+Where:
 \begin{itemize}
-
-    \item paper title:\\
-    \verb!\title{Paper title}!
-
-    \item Christian and first names of each author, with a number
-    linking to its address:\\
-    \verb!\author{\coord{Pierre}{Dupont}{1},!\\
-    \verb!        \coord{John}{Smith}{2}}!
-
-    \item authors' addresses:\\
-    \verb!\adresse{\affil{1}{Laboratory \\! \\
-    \verb!         street, town, country}     ! \\
-    \verb!         \affil{2}{University \\! \\
-    \verb!         street, town, country}     !
-
-    \item e-mail addresses:\\
-    \verb!\email{First.Name@labo.fr, smith@univ.fr}!
-
-    \item french and english written abstracts:\footnote{French
-    written abstract is optional, but highly recommended.}\\
-    \verb!\frenchabstract{R\'esum\'e fran\c{c}ais}! \\
-    \verb!\englishabstract{English written abstract}!
-
-    \item then, your text, and the bibliography: \\
-    \verb!\begin{document}! \\
-    \verb!\maketitle! \\
-    \verb!Paper text! \\
-    \verb!\begin{thebibliography}{99}! \\
-    \verb!The references! \\
-    \verb!\end{thebibliography}! \\
-    \verb!\end{document}!
-
+	\item $D(x,y,\sigma)$ is the DoG image
+	\item $I(x,y)$ is the original image
+	\item $G(x,y,k\sigma)$ is the Gaussian blur at scale $k\sigma$.
 \end{itemize}
 
-\subsection{Section and subsection}
-This example file uses \verb!\section! and \verb!\subsection!. For
-lower level sectioning commands, you obtain:
-\subsubsection{Subsubsection}
-By means of \verb!\subsubsection!.
-\paragraph{Subsubsubsection}
-By means of \verb!\paragraph!.
+The scale-space extrema detection produces too many kepoint candidates, some of them are unstable. In the second stage of SIFT, the key point candidates are localized and refined by suppress the key points which have the low contrast or are poorly localized along an edge. 
 
-\section{Tables, figures and mathematics}
-The title of tables should appear at the top, as in table
-\ref{power}.
-\begin{table}[htb]
-    \caption{\label{power}2 to the power}
-    \begin{center}
-    \begin{tabular}{||c||*{8}{c|}|}
-        \hline\hline
-        $n$   & 1 & 2 & 3 &  4 &  5 &  6 &   7 &   8 \\ \hline
-        $2^n$ & 2 & 4 & 8 & 16 & 32 & 64 & 128 & 256 \\
-        \hline\hline
-    \end{tabular}
-    \end{center}
-\end{table}
+Then, the orientation and gradient magnitude of key points are calculated by applyiing the following equations (Eq. \ref{eq2}):
+\begin{equation}
+\label{eq2}
+\begin{split}
+	m(x,y) &= \sqrt{v_x^2 + v_y^2} \\
+	\theta(x,y)& = tan^{-1}(v_y/v_x) \\
+\end{split}
+\end{equation}
+Where:
+\begin{itemize}
+	\item $v_x = I(x+1,y) - I(x-1,y)$
+	\item $v_y = I(x,y+1) - I(x,y-1)$
+	\item $I(x,y)$ is the gray value at position $(x,y)$ in the image,
+	\item $m(x,y)$ is the gradient magnitude of the pixel at position $(x,y)$,
+	\item $\theta(x,y)$ is the orientation of the pixel at position $(x,y)$.
+\end{itemize} 
+At the end, the descriptor is computed for each key point based on the orientation and gradient magnitude to ensure the invariance to image location, scale, and rotation. First, an orientation histogram with 8 bins is created on $4 \times 4$ pixel neighborhoods. This histogram is computed from the magnitude and orientation values of each pixel in the $4 \times 4$ region. The descriptor around a keypoint is a histogram of a $16 \times 16$ region around it which is combined from the 4 histograms of the $4 \times 4$ subregions. Then, all the values of the histogram are presented as a vector. To reduce the effects of illumination changes, the vector is normalized and applied a threshold of $0.2$ and the vector is again normalized.
 
-Captions should appear below graphical objects, as in figure \ref{circle}.
+%Fig. \ref{fig2} shows the process to calculate the original SIFT descriptor of a keypoint. Firstly, the gradient magnitude and orientation at all the pixels in the $16 \times 16$ region around the keypoint are calculated (shown on the left). Then the samples are accumulated into orientation histogram over $4 \times 4$ subregions (shown on the right), with the length of each arrow corresponding to the sum of the gradient magnitudes near that direction.  
+%\begin{figure}[htb]
+%    \centering
+%    \includegraphics[width=0.4\textwidth]{./images/siftpic}
+%    \caption{The SIFT descriptor around a keypoint}
+%    \label{fig2}
+%\end{figure}
+
+By applying the original SIFT into our problem, we have succeeded indicating the keypoints in the image (see Fig. \ref{fig3}). But we do not have the result when we try to extract correspondence keypoints between the source and target image. The problem is carried from the choosing the best points from the large set of the candidates. This problem is solved in our method by limit the search space before applied the SIFT, plus changing the size of the grid to calculate the SIFT descriptor.
 \begin{figure}[htb]
-    \begin{center}
-    \setlength{\unitlength}{0.5cm}
-    \begin{picture}(5,5)
-        \put(2.5,2.5){\oval(5,5)}
-        \put(1,1){\line(1,0){3}}
-        \put(4,1){\line(0,1){3}}
-        \put(1,4){\line(1,0){3}}
-        \put(1,1){\line(0,1){3}}
-    \end{picture}
-    \end{center}
-    \caption{\label{circle}a square in an oval}
+    \centering
+    \includegraphics[width=0.3\textwidth]{./images/siftc}
+    \caption{SIFT keypoints in a right mandible}
+    \label{fig3}
+\end{figure}
+\subsection{SIFT using into landmark area}
+As mentioned in section \ref{secSIFT}, we have tried to use original of SIFT to detect the landmarks. But the result shows a lot of candidates for the estimated landmarks. Additional, the position of the detected points are very far when we compare with the ground truth ones (manual landmarks). To hope for a better result, we use the SIFT method with another way, we do not consider all points of the image as usually; instead, we register two images first. Then, the area (called patch) around each source landmark is detected then a larger patch is extracted in the target image at the same position. The SIFT descriptor is calculated as the original way but the size of the sample is $9 \times 9$ (instead $16 \times 16$). This size has been obtained after several tests. The SIFT descriptor for the patch is also an histogram containing the sum of pixel gradients for each consider direction. The comparison between two SIFT-descriptors is done by L2-distance with following equation (Eq. \ref{eql2}):
+\begin{equation}
+\label{eql2}
+	L(D1,D2) = \sum\limits_{i = 0}^{n}\sqrt{(D1_i-D2_i)^2}
+\end{equation}
+Where:
+\begin{itemize}%[nosep,label=\footnotesize$\bullet$]
+	\item $n$ is the number of directions
+	\item $D1$ and $D2$ are two descriptors of size $n$,
+	\item $D1_i$ and $D2_i $ are the $i^{th}$ descriptor values.
+\end{itemize}
+The way that we apply SIFT into our work is painted in Fig. \ref{fig4}. To detect the target landmarks, a registration is computed between the source and target images. Then, the patch $P_m$ of source and $P_s$ of the target are created with the size of $P_m$ is smaller than the size of $P_s$. For each pixel in $P_s$, a sub-patch $P_s'$ is extracted with the same size of $P_m$. When the $P_s'$ have a part outside of $P_s$, the pixels do not belong to the patch will be considered. Then, the distance $L(P_m,P_s')$ is computed by using Eq. (\ref{eql2}). This work is finished when all the pixel in patch $P_s$ are considered. The position of estimated landmark corresponds to the position of the sub-patch $P_s'$ with smallest distance $L(P_m,P_s')$. Finally, the position of the estimated landmarks are set in the original position of the target image.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.48\textwidth]{./images/illustration_SIFT}
+    \caption{Steps of SIFT descriptors comparisons between the patch $P_m$ of the source image and the patches $P'_s$ of the target image.}
+    \label{fig4}
 \end{figure}
 
-Including \texttt{Postscript} graphics files is easily performed by
-means of \texttt{graphics}, \texttt{graphicx} or \texttt{epsfig}
-packages. To insert \texttt{fig.eps} file, with automatic width
-adjustment, using \texttt{graphics} package, you have to enter:
-\begin{verbatim}
-    \begin{figure}[htb]
-    \begin{center}
-    \resizebox{88mm}{!}{
-    \includegraphics{fig.eps}}
-    \end{center}
-    \legende{title}
-    \end{figure}
-\end{verbatim}
-With \texttt{graphicx} package, you have to enter:
-\begin{verbatim}
-    \begin{figure}[htb]
-    \begin{center}
-    \includegraphics[width=88mm]{fig.eps}
-    \end{center}
-    \legende{title}
-    \end{figure}
-\end{verbatim}
-With \texttt{epsfig}, you have to enter:
-\begin{verbatim}
-    \begin{figure}[htb]
-    \begin{center}
-    \epsfig{file=fig.eps,width=88mm}
-    \end{center}
-    \legende{title}
-    \end{figure}
-\end{verbatim}
-Mathematical formulas appearence can be improved by means of
-\texttt{amsmath} package from $\mathcal{AMS}$-\LaTeX. They
-have to be numbered as formula \ref{formula}:
-\begin{equation}
-   \label{formula}
-   F(x) = \int_{-\infty}^x f(u)\,du
-\end{equation}
+By experiments, a patch sample of $9 \times 9$ pixels centered in each landmark on the source and the size of $36 \times 36$ is kept for the patch on the target image.
+\section{Experiments and results}
+The method is tested on two sets (left and right mandible) of beetles. After verifying the dataset, it remains 290 images of right mandibles and 286 left mandible images. In all valid images, a set of manual landmark is indicated by biologists: 18 for each right mandible, 16 for each left mandible.
 
-\begin{thebibliography}{99}
+As discussed, before applying the SIFT descriptor to estimate the landmarks on the target image. We have estimated the search space that contains the landmarks.
 
-\bibitem{companion}
-M.~Goossens, F~Mittelbach et A.~Samarin.
-\emph{The \LaTeX{} Companion}.
-Addison-Wesley, 1994.
+Firstly, the segmentation is applied on both of source and the target image. The Canny algorithm \cite{canny1986computational} was chosen to finish this step. To use the Canny algorithm, two thresholds value must be provided ($T_{lower}, T_{upper}$). As mentioned in \cite{adaptiveCanny}, indicating the threshold values is a difficult problem. If the threshold values are unsuitable, the contours could be far with ground truth (fewer contours or more noise). In our case, the lower threshold value is indicated by analysis the histogram of the image \cite{leestimating}. The ratio of two threshold values is chosen as $1 : 3$ to consider a wide range of the values. During Canny computing, the direction of the gradient of each pixel belonging to the contours is kept and will be used later. At the end of segmentation step, a simple algorithm is applied to remove the edge inside the main contours.
 
-\bibitem{lamport94a}
-L.~Lamport.
-\emph{\LaTeX{} User's Guide and Reference Manual}.
-Addison-Wesley, 1994.
+Then, the PCA iteration is computed to register two lists of contours points from the images \cite{shlens2014tutorial, jolliffe2002principal}. The lists of contour points are used  as the input. The centroid point and principal axis are computed for each image contours. Two lists of contours points are registered by computing the translation and rotation parameter values. However in some case, the result of the segmentation step could exist the noise, it could affect to the registration step. To improve the registration, we have built up the PCA by iterating until stabilization (PCAI). Finally, the SIFT descriptor is finished to determine the estimated landmark on the target image.
 
-\end{thebibliography}
+We have run the method on all usable images. The results are given in difference: estimated landmarks are well positioned on some target images but not pleasing on others. As raised, the mandible images can be exist difference sizes because beetles have also difference sizes. We detected that our method is sensible to this parameter. To improve the result, we have inserted a pre-process step before the computing of the SIFT descriptor to estimate the scale between source and target image. The bounding box of contours in source and target are defined by checked the coordinate of the contour points. The scale between two images is the ratio of two bounding boxes.
+
+The Fig. \ref{fig5} shows the final result for a right and a left mandible with manual and estimated landmarks. The estimated landmarks are quite near with the manual ones.  
+
+\begin{figure}[h]
+
+\centering
+\subfloat[Left mandible]{\label{figrbox2}\includegraphics[width=0.22\textwidth]{./images/mg_rs}}~~
+\subfloat[Right mandible]{\label{figrbox1}\includegraphics[width=0.22\textwidth]{./images/md_rs}}
+\caption{The manual (in red) and estimated (in yellow) landmarks on a mandible.}
+\label{fig5}
+\end{figure}
+
+The first statistic is done on the mean accuracy of all landmarks on the target images. The error is computed as the distance between the manual and corresponding estimated landmark on the target image with an error accepted from 1\% to 2\% of bounding box's size (when we consider the scale of the image). According to this way, the result is shown in Fig. \ref{fig6}; following that, the good score of well-positioned landmarks equal to \textbf{87.03\%} for the set of right mandibles and \textbf{78.82\%} for left mandibles.
+\begin{figure}[h]
+\centering
+\subfloat[Set of right mandibles.]{\label{figmdresult}\includegraphics[width=0.22\textwidth]{./images/mdresult}}~~
+\subfloat[Set of left mandibles.]{\label{figmgresult}\includegraphics[width=0.22\textwidth]{./images/mgresult}}
+\caption{The mean proportion of well and bad landmark locations of the two sets of left and right mandibles.}
+\label{fig6}
+\end{figure}
+
+Beside the global results, we are also interested by the accuracy of each estimated landmark. The error measure is the same with the first one (distance between manual and corresponding estimated landmark) but the acceptance is done with standard deviation of the distances \cite{bland1996statistics}. Figs \ref{fig7} and \ref{fig8} show the proportion of well estimated landmarks on each dataset. With 18 landmarks of right mandible, the highest proportion is belong to the $1^{st}$ landmark with \textbf{98.62\%}; the lowest proportion is \textbf{74.48\%} for the $14^{th}$ landmark. The remaining landmarks are also estimated with a high accuracy greater than \textbf{75\%}. For left mandibles, the highest and lowest success rate are \textbf{93.01\%} for the $1^{st}$ landmark and \textbf{60.14\%} for the $16^{th}$ landmark. In this evaluation, we can see that the correct proportion on the $11^{th}$ and $12^{th}$ landmark of the left mandible and the $13^{th}$ and $14^{th}$ landmark of the right mandible are less than other landmarks. The reason is come from the noise of the contours at the base of mandible is higher than the top of the mandible.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./images/md_chartlms}
+    \caption{The proportions of well estimated landmark for each model landmark of right mandibles.}
+    \label{fig7}
+\end{figure}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./images/mg_chartlms}
+    \caption{The proportions of well estimated landmark for each model landmark of left mandibles.}
+    \label{fig8}
+\end{figure}
+\section{Conclusion and discussion}
+The landmarks setting is the main way to analysis image in biology. In this paper, we have described a difference way to use the SIFT descriptor along with the segmentation and registration processes to estimate the landmark on the beetle. Firstly, each mandible has been segmented. Then, two contours are registered. Finally, SIFT descriptor is applied to find the best matching position of estimated landmarks. The results show that our method succeeds in locating all the landmarks of the image. The accuracy of the method is sufficient to be proposed to biologists as a replacement of the manual measures. Moreover, considering with previous work \cite{leestimating}, the position of the estimated landmarks are improved a little bit. From now, the next stage consists the improving to increase the correct accuracy of the landmarks in the bottom of the mandible.
+
+\bibliographystyle{plain}
+\bibliography{references}
 
 \end{document}
