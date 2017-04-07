@@ -86,40 +86,37 @@ For each beetle, the morphometric landmarks have been manually identified on man
 In this section, firstly, we have a summary about the general utilization of SIFT. Then, we will discuss detail about our method with a difference way of SIFT to estimate the landmarks.
 \subsection{SIFT method}
 \label{secSIFT}
-SIFT method has been proposed by Lowe \cite{lowe1999object, lowe2004distinctive}. It is used to extract distinctive invariant features from the images. Besides, the features from SIFT can use to match between different views of source and target images such as rotation, scale, noise. SIFT method includes four stages: (1) scale-space extrema detection, (2) keypoint localization, (3) orientation assignment, and (4) keypoint descriptor.
+SIFT method has been proposed by Lowe \cite{lowe1999object, lowe2004distinctive}. It is used to extract distinctive invariant features from the images. Besides, the features from SIFT can use to match between different views of source and target images such as rotation, scale, noise. SIFT method includes four stages: (1) scale-space extrema detection stage, (2) keypoint localization, (3) orientation assignment, and (4) keypoint descriptor.
 
-In the first stage, a difference of Gaussian (DoG) \cite{davidson2006molecular} (Eq. \ref{eq1}) function is applied to identify the interest points on all scale and orientation of image. The keypoints are taken as the maximal and minimal of the result of DoG function at mutliple scale.
-\begin{equation}
-	D(x,y,\sigma) = (G(x,y,k_i\sigma) - G(x,y,k_j\sigma)) * I(x,y)
-	\label{eq1}
-\end{equation}
-Where:
-\begin{itemize}
-	\item $D(x,y,\sigma)$ is the DoG image
-	\item $I(x,y)$ is the original image
-	\item $G(x,y,k\sigma)$ is the Gaussian blur at scale $k\sigma$.
-\end{itemize}
-
+In the first stage, a difference of Gaussian (DoG) \cite{davidson2006molecular}  function is applied to identify the interest points on all scale and orientation of image. The keypoints are taken as the maximal and minimal of the result of DoG function at mutliple scale.
+%\begin{equation}
+%	D(x,y,\sigma) = (G(x,y,k_i\sigma) - G(x,y,k_j\sigma)) * I(x,y)
+%	\label{eq1}
+%\end{equation}
+%Where:
+%\begin{itemize}
+%	\item $D(x,y,\sigma)$ is the DoG image
+%	\item $I(x,y)$ is the original image
+%	\item $G(x,y,k\sigma)$ is the Gaussian blur at scale $k\sigma$.
+%\end{itemize}
 The scale-space extrema detection produces too many kepoint candidates, some of them are unstable. In the second stage of SIFT, the key point candidates are localized and refined by suppress the key points which have the low contrast or are poorly localized along an edge. 
-
-Then, the orientation and gradient magnitude of key points are calculated by applyiing the following equations (Eq. \ref{eq2}):
-\begin{equation}
-\label{eq2}
-\begin{split}
-	m(x,y) &= \sqrt{v_x^2 + v_y^2} \\
-	\theta(x,y)& = tan^{-1}(v_y/v_x) \\
-\end{split}
-\end{equation}
-Where:
-\begin{itemize}
-	\item $v_x = I(x+1,y) - I(x-1,y)$
-	\item $v_y = I(x,y+1) - I(x,y-1)$
-	\item $I(x,y)$ is the gray value at position $(x,y)$ in the image,
-	\item $m(x,y)$ is the gradient magnitude of the pixel at position $(x,y)$,
-	\item $\theta(x,y)$ is the orientation of the pixel at position $(x,y)$.
-\end{itemize} 
-At the end, the descriptor is computed for each key point based on the orientation and gradient magnitude to ensure the invariance to image location, scale, and rotation. First, an orientation histogram with 8 bins is created on $4 \times 4$ pixel neighborhoods. This histogram is computed from the magnitude and orientation values of each pixel in the $4 \times 4$ region. The descriptor around a keypoint is a histogram of a $16 \times 16$ region around it which is combined from the 4 histograms of the $4 \times 4$ subregions. Then, all the values of the histogram are presented as a vector. To reduce the effects of illumination changes, the vector is normalized and applied a threshold of $0.2$ and the vector is again normalized.
-
+Then, the orientation and gradient magnitude of key points are calculated by considered the 4-neighborhoods of them.
+%\begin{equation}
+%\label{eq2}
+%\begin{split}
+%	m(x,y) &= \sqrt{v_x^2 + v_y^2} \\
+%	\theta(x,y)& = tan^{-1}(v_y/v_x) \\
+%\end{split}
+%\end{equation}
+%Where:
+%\begin{itemize}
+%	\item $v_x = I(x+1,y) - I(x-1,y)$
+%	\item $v_y = I(x,y+1) - I(x,y-1)$
+%	\item $I(x,y)$ is the gray value at position $(x,y)$ in the image,
+%	\item $m(x,y)$ is the gradient magnitude of the pixel at position $(x,y)$,
+%	\item $\theta(x,y)$ is the orientation of the pixel at position $(x,y)$.
+%\end{itemize} 
+At the end, the descriptor is computed for each key point based on the orientation and gradient magnitude. This is the descriptor of a region $16 \times 16$ pixels around the key point.
 %Fig. \ref{fig2} shows the process to calculate the original SIFT descriptor of a keypoint. Firstly, the gradient magnitude and orientation at all the pixels in the $16 \times 16$ region around the keypoint are calculated (shown on the left). Then the samples are accumulated into orientation histogram over $4 \times 4$ subregions (shown on the right), with the length of each arrow corresponding to the sum of the gradient magnitudes near that direction.  
 %\begin{figure}[htb]
 %    \centering
@@ -136,7 +133,9 @@ By applying the original SIFT into our problem, we have succeeded indicating the
     \label{fig3}
 \end{figure}
 \subsection{SIFT using into landmark area}
-As mentioned in section \ref{secSIFT}, we have tried to use original of SIFT to detect the landmarks. But the result shows a lot of candidates for the estimated landmarks. Additional, the position of the detected points are very far when we compare with the ground truth ones (manual landmarks). To hope for a better result, we use the SIFT method with another way, we do not consider all points of the image as usually; instead, we register two images first. Then, the area (called patch) around each source landmark is detected then a larger patch is extracted in the target image at the same position. The SIFT descriptor is calculated as the original way but the size of the sample is $9 \times 9$ (instead $16 \times 16$). This size has been obtained after several tests. The SIFT descriptor for the patch is also an histogram containing the sum of pixel gradients for each consider direction. The comparison between two SIFT-descriptors is done by L2-distance with following equation (Eq. \ref{eql2}):
+As mentioned in section \ref{secSIFT}, we have tried to use original of SIFT to detect the landmarks. But the result shows a lot of candidates for the estimated landmarks. Additional, the position of the detected points are very far when we compare with the ground truth ones (manual landmarks), and searching in whole image is very time consuming. To hope for a better result, we use the SIFT method with another way, we do not consider all points of the image as usually. Instead, we limit the searching space and change the region size around the landmark first. 
+
+Firstly, two images are segmented. Then, we register two lists of contours points. After that, the area (called patch) around each source landmark is detected then a larger patch is extracted in the target image at the same position. The SIFT descriptor is calculated as the original way. But we have reduced two first stages of SIFT and have changed the size of the sample region as $9 \times 9$ (instead $16 \times 16$). This size has been obtained after several tests. The SIFT descriptor for the patch is also an histogram containing the sum of pixel gradients for each consider direction. The comparison between two SIFT-descriptors is done by L2-distance with following equation (Eq. \ref{eql2}):
 \begin{equation}
 \label{eql2}
 	L(D1,D2) = \sum\limits_{i = 0}^{n}\sqrt{(D1_i-D2_i)^2}
@@ -187,7 +186,7 @@ The first statistic is done on the mean accuracy of all landmarks on the target 
 \label{fig6}
 \end{figure}
 
-Beside the global results, we are also interested by the accuracy of each estimated landmark. The error measure is the same with the first one (distance between manual and corresponding estimated landmark) but the acceptance is done with standard deviation of the distances \cite{bland1996statistics}. Figs \ref{fig7} and \ref{fig8} show the proportion of well estimated landmarks on each dataset. With 18 landmarks of right mandible, the highest proportion is belong to the $1^{st}$ landmark with \textbf{98.62\%}; the lowest proportion is \textbf{74.48\%} for the $14^{th}$ landmark. The remaining landmarks are also estimated with a high accuracy greater than \textbf{75\%}. For left mandibles, the highest and lowest success rate are \textbf{93.01\%} for the $1^{st}$ landmark and \textbf{60.14\%} for the $16^{th}$ landmark. In this evaluation, we can see that the correct proportion on the $11^{th}$ and $12^{th}$ landmark of the left mandible and the $13^{th}$ and $14^{th}$ landmark of the right mandible are less than other landmarks. The reason is come from the noise of the contours at the base of mandible is higher than the top of the mandible.
+Beside the global results, we are also interested by the accuracy of each estimated landmark. The error measure is the same with the first one (distance between manual and corresponding estimated landmark) but the acceptance is done with standard deviation of the distances \cite{bland1996statistics}. Figs \ref{fig7} and \ref{fig8} show the proportion of well estimated landmarks on each dataset. With 18 landmarks of right mandible, the highest proportion is belong to the $1^{st}$ landmark with \textbf{98.62\%}; the lowest proportion is \textbf{74.48\%} for the $14^{th}$ landmark. The remaining landmarks are also estimated with a high accuracy greater than \textbf{75\%}. For left mandibles, the highest and lowest success rate are \textbf{93.01\%} for the $1^{st}$ landmark and \textbf{60.14\%} for the $16^{th}$ landmark. In this evaluation, we can see that the correct proportion on the $11^{th}$ and $12^{th}$ landmark of the left mandible and the $13^{th}$ and $14^{th}$ landmark of the right mandible are less than other landmarks. The reason is come from the noise of the contours at the base of mandible is higher than the top of the mandible. Currently, using SIFT to estimate the landmarks is implemented in MAELab. It was written in C++. MAELab is distributed as free library on the Github.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.5\textwidth]{./images/md_chartlms}
