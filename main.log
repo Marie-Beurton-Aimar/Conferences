@@ -1,17 +1,17 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.6)  10 APR 2017 10:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.23)  10 APR 2017 11:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main
+**main.tex
 (./main.tex
-LaTeX2e <2014/05/01>
-Babel <3.9l> and hyphenation patterns for 6 languages loaded.
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (./gretsi.cls Classe LaTeX du GRETSI
 Document Class: gretsi 2008/12/15 v1.2
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -26,13 +26,13 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2014/09/25 3.9l The Babel package
+Package: babel 2013/12/03 3.9h The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2014/09/25 3.9l Babel common definitions
+File: babel.def 2013/12/03 3.9h Babel common definitions
 \babel@savecnt=\count87
 \U@D=\dimen103
 )
@@ -41,29 +41,23 @@ File: babel.def 2014/09/25 3.9l Babel common definitions
 \l@newzealand = a dialect from \language\l@british 
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
-Language: frenchb 2014/09/16 v3.1b French support from the babel system
-\l@acadian = a dialect from \language\l@french 
-\l@canadien = a dialect from \language\l@french 
-\FBcolonskip=\skip43
-\FBthinskip=\skip44
+Language: frenchb 2013/12/30 v2.6g French support from the babel system
 \FB@interchartokenstateORI=\count88
-Package babel Info: Making : an active character on input line 371.
-Package babel Info: Making ; an active character on input line 372.
-Package babel Info: Making ! an active character on input line 373.
-Package babel Info: Making ? an active character on input line 374.
-\FBguillskip=\skip45
-\FBguill@level=\count89
+Package babel Info: Making : an active character on input line 244.
+Package babel Info: Making ; an active character on input line 245.
+Package babel Info: Making ! an active character on input line 246.
+Package babel Info: Making ? an active character on input line 247.
 \FB@Mht=\dimen104
-\std@mcc=\count90
-\dec@mcc=\count91
-\listindentFB=\skip46
-\labelwidthFB=\skip47
-\leftmarginFB=\skip48
+\std@mcc=\count89
+\dec@mcc=\count90
+\listindentFB=\skip43
+\labelwidthFB=\skip44
+\leftmarginFB=\skip45
 \parindentFFN=\dimen105
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
@@ -86,24 +80,24 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \caption@parindent=\dimen111
 \caption@hangindent=\dimen112
 )
-\c@ContinuedFloat=\count92
+\c@ContinuedFloat=\count91
 )
-\c@KVtest=\count93
-\sf@farskip=\skip49
+\c@KVtest=\count92
+\sf@farskip=\skip46
 \sf@captopadj=\dimen113
-\sf@capskip=\skip50
-\sf@nearskip=\skip51
-\c@subfigure=\count94
-\c@subfigure@save=\count95
-\c@lofdepth=\count96
-\c@subtable=\count97
-\c@subtable@save=\count98
-\c@lotdepth=\count99
-\sf@top=\skip52
-\sf@bottom=\skip53
+\sf@capskip=\skip47
+\sf@nearskip=\skip48
+\c@subfigure=\count93
+\c@subfigure@save=\count94
+\c@lofdepth=\count95
+\c@subtable=\count96
+\c@subtable@save=\count97
+\c@lotdepth=\count98
+\sf@top=\skip49
+\sf@bottom=\skip50
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -125,14 +119,14 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count100
+\Gread@gobject=\count99
 ))
 \Gin@req@height=\dimen114
 \Gin@req@width=\dimen115
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip54
+\@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -150,13 +144,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count101
+\inf@bad=\count100
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count102
-\leftroot@=\count103
+\uproot@=\count101
+\leftroot@=\count102
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count104
-\DOTSCASE@=\count105
+\classnum@=\count103
+\DOTSCASE@=\count104
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -165,15 +159,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen118
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count106
-\c@MaxMatrixCols=\count107
+\macc@depth=\count105
+\c@MaxMatrixCols=\count106
 \dotsspace@=\muskip10
-\c@parentequation=\count108
-\dspbrk@lvl=\count109
+\c@parentequation=\count107
+\dspbrk@lvl=\count108
 \tag@help=\toks16
-\row@=\count110
-\column@=\count111
-\maxfields@=\count112
+\row@=\count109
+\column@=\count110
+\maxfields@=\count111
 \andhelp@=\toks17
 \eqnshift@=\dimen119
 \alignsep@=\dimen120
@@ -182,21 +176,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \totwidth@=\dimen123
 \lineht@=\dimen124
 \@envbody=\toks18
-\multlinegap=\skip55
-\multlinetaggap=\skip56
+\multlinegap=\skip52
+\multlinetaggap=\skip53
 \mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count113
+\c@AlgoLine=\count112
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
-Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
@@ -208,14 +202,14 @@ Package `algorithm2e' Release 5.0 -- january 06 2013 --
 subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 - Author: Christophe Fiorio (cfiorio@um2.fr)
 ********************************************************
-\skiptotal=\skip57
-\skiplinenumber=\skip58
-\skiprule=\skip59
-\skiphlne=\skip60
-\skiptext=\skip61
-\skiplength=\skip62
-\algomargin=\skip63
-\skipalgocfslide=\skip64
+\skiptotal=\skip54
+\skiplinenumber=\skip55
+\skiprule=\skip56
+\skiphlne=\skip57
+\skiptext=\skip58
+\skiplength=\skip59
+\algomargin=\skip60
+\skipalgocfslide=\skip61
 \algowidth=\dimen125
 \inoutsize=\dimen126
 \inoutindent=\dimen127
@@ -224,21 +218,21 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \interspacetitleboxruled=\dimen130
 \algocf@inoutbox=\box28
 \algocf@inputbox=\box29
-\AlCapSkip=\skip65
-\AlCapHSkip=\skip66
-\algoskipindent=\skip67
+\AlCapSkip=\skip62
+\AlCapHSkip=\skip63
+\algoskipindent=\skip64
 \algocf@nlbox=\box30
 \algocf@hangingbox=\box31
 \algocf@untilbox=\box32
-\algocf@skipuntil=\skip68
+\algocf@skipuntil=\skip65
 \algocf@capbox=\box33
-\algoheightruledefault=\skip69
-\algoheightrule=\skip70
-\algotitleheightruledefault=\skip71
-\algotitleheightrule=\skip72
-\c@algocfline=\count114
-\c@algocfproc=\count115
-\c@algocf=\count116
+\algoheightruledefault=\skip66
+\algoheightrule=\skip67
+\algotitleheightruledefault=\skip68
+\algotitleheightrule=\skip69
+\c@algocfline=\count113
+\c@algocfproc=\count114
+\c@algocf=\count115
 \algocf@algoframe=\box34
 \algocf@algobox=\box35
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
@@ -263,41 +257,41 @@ LaTeX Warning: Label `sub@figrbox1' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 95.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 93.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Info: Redefining \degres on input line 95.
-LaTeX Info: Redefining \dots on input line 95.
-LaTeX Info: Redefining \up on input line 95.
+LaTeX Info: Redefining \degres on input line 93.
+LaTeX Info: Redefining \dots on input line 93.
+LaTeX Info: Redefining \up on input line 93.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
+\scratchcounter=\count116
 \scratchdimen=\dimen131
 \scratchbox=\box36
-\nofMPsegments=\count118
-\nofMParguments=\count119
+\nofMPsegments=\count117
+\nofMParguments=\count118
 \everyMPshowfont=\toks20
-\MPscratchCnt=\count120
+\MPscratchCnt=\count119
 \MPscratchDim=\dimen132
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
+\MPnumerator=\count120
+\makeMPintoPDFobject=\count121
 \everyMPtoPDFconversion=\toks21
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -348,34 +342,34 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 96.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 96.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 94.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 96.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 94.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 96.
 
 <./images/lm.jpg, id=1, 97.86563pt x 154.32657pt>
 File: ./images/lm.jpg Graphic file (type jpg)
  <use ./images/lm.jpg>
-Package pdftex.def Info: ./images/lm.jpg used on input line 117.
+Package pdftex.def Info: ./images/lm.jpg used on input line 115.
 (pdftex.def)             Requested size: 113.92546pt x 179.66179pt.
 
 <./images/rm.jpg, id=2, 97.86563pt x 154.32657pt>
 File: ./images/rm.jpg Graphic file (type jpg)
  <use ./images/rm.jpg>
-Package pdftex.def Info: ./images/rm.jpg used on input line 118.
+Package pdftex.def Info: ./images/rm.jpg used on input line 116.
 (pdftex.def)             Requested size: 113.92546pt x 179.66179pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (6.66302pt too wide) in paragraph at lines 124--137
+Overfull \hbox (6.66302pt too wide) in paragraph at lines 122--135
 \T1/ptm/m/n/10 des-crip-tor to in-sert in-for-ma-tion about land-mark area in t
 he source
  []
@@ -388,75 +382,71 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 153.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 151.
 
 <./images/siftc.jpg, id=11, 75.28125pt x 67.75313pt>
 File: ./images/siftc.jpg Graphic file (type jpg)
  <use ./images/siftc.jpg>
-Package pdftex.def Info: ./images/siftc.jpg used on input line 195.
+Package pdftex.def Info: ./images/siftc.jpg used on input line 193.
 (pdftex.def)             Requested size: 155.35362pt x 139.84589pt.
 
-Overfull \hbox (1.89722pt too wide) in paragraph at lines 211--222
+Overfull \hbox (1.89722pt too wide) in paragraph at lines 207--218
 \T1/ptm/m/n/10 lists of contours points. Af-ter that, the area (cal-led patch) 
 around
  []
 
 [2 <./images/lm.jpg> <./images/rm.jpg> <./images/siftc.jpg>]
-<./images/illustration_SIFT.png, id=21, 737.75626pt x 276.03125pt>
+<./images/illustration_SIFT.png, id=22, 407.5225pt x 159.59625pt>
 File: ./images/illustration_SIFT.png Graphic file (type png)
 
 <use ./images/illustration_SIFT.png>
-Package pdftex.def Info: ./images/illustration_SIFT.png used on input line 249.
+Package pdftex.def Info: ./images/illustration_SIFT.png used on input line 246.
 
-(pdftex.def)             Requested size: 248.56105pt x 92.99857pt.
+(pdftex.def)             Requested size: 248.56105pt x 97.34381pt.
 
-Overfull \hbox (3.39642pt too wide) in paragraph at lines 312--315
+Overfull \hbox (3.39642pt too wide) in paragraph at lines 311--314
 \T1/ptm/m/n/10 dible with ma-nual and es-ti-ma-ted land-marks. The es-ti-ma-ted
  land-
  []
 
-<./images/mg_rs.png, id=22, 150.5625pt x 225.84375pt>
+<./images/mg_rs.png, id=23, 150.5625pt x 225.84375pt>
 File: ./images/mg_rs.png Graphic file (type png)
  <use ./images/mg_rs.png>
-Package pdftex.def Info: ./images/mg_rs.png used on input line 320.
+Package pdftex.def Info: ./images/mg_rs.png used on input line 319.
 (pdftex.def)             Requested size: 113.92546pt x 170.89522pt.
 
-<./images/md_rs.png, id=24, 150.5625pt x 225.84375pt>
+<./images/md_rs.png, id=25, 150.5625pt x 225.84375pt>
 File: ./images/md_rs.png Graphic file (type png)
  <use ./images/md_rs.png>
-Package pdftex.def Info: ./images/md_rs.png used on input line 321.
+Package pdftex.def Info: ./images/md_rs.png used on input line 320.
 (pdftex.def)             Requested size: 113.92546pt x 170.89522pt.
-
-<./images/mdresult.jpg, id=25, 200.75pt x 188.705pt>
-File: ./images/mdresult.jpg Graphic file (type jpg)
-
-<use ./images/mdresult.jpg>
-Package pdftex.def Info: ./images/mdresult.jpg used on input line 337.
-(pdftex.def)             Requested size: 113.92546pt x 107.09361pt.
-
-<./images/mgresult.jpg, id=26, 200.75pt x 182.6825pt>
-File: ./images/mgresult.jpg Graphic file (type jpg)
-
-<use ./images/mgresult.jpg>
-Package pdftex.def Info: ./images/mgresult.jpg used on input line 338.
-(pdftex.def)             Requested size: 113.92546pt x 103.67574pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3 <./images/illustration_SIFT.png> <./images/mg_rs.png> <./images/md_rs.png>]
 
+<./images/mdresult.jpg, id=31, 200.75pt x 188.705pt>
+File: ./images/mdresult.jpg Graphic file (type jpg)
+
+<use ./images/mdresult.jpg>
+Package pdftex.def Info: ./images/mdresult.jpg used on input line 336.
+(pdftex.def)             Requested size: 113.92546pt x 107.09361pt.
+
+<./images/mgresult.jpg, id=32, 200.75pt x 182.6825pt>
+File: ./images/mgresult.jpg Graphic file (type jpg)
+
+<use ./images/mgresult.jpg>
+Package pdftex.def Info: ./images/mgresult.jpg used on input line 337.
+(pdftex.def)             Requested size: 113.92546pt x 103.67574pt.
+
 <./images/md_chartlms.jpg, id=33, 892.33376pt x 545.03625pt>
 File: ./images/md_chartlms.jpg Graphic file (type jpg)
 
 <use ./images/md_chartlms.jpg>
-Package pdftex.def Info: ./images/md_chartlms.jpg used on input line 366.
+Package pdftex.def Info: ./images/md_chartlms.jpg used on input line 365.
 (pdftex.def)             Requested size: 258.92007pt x 158.14795pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 366--367
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 365--366
  [][] 
  []
 
@@ -464,12 +454,16 @@ Overfull \hbox (8.53583pt too wide) in paragraph at lines 366--367
 File: ./images/mg_chartlms.jpg Graphic file (type jpg)
 
 <use ./images/mg_chartlms.jpg>
-Package pdftex.def Info: ./images/mg_chartlms.jpg used on input line 372.
+Package pdftex.def Info: ./images/mg_chartlms.jpg used on input line 371.
 (pdftex.def)             Requested size: 258.92007pt x 180.07494pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 372--373
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 371--372
  [][] 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 (./main.bbl [4 <./images/mdresult.jpg> <./images/mgresult.jpg> <./images/md_cha
 rtlms.jpg> <./images/mg_chartlms.jpg>]) [5
@@ -480,13 +474,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6148 strings out of 494950
- 89035 string characters out of 6179040
- 179022 words of memory out of 5000000
- 9295 multiletter control sequences out of 15000+600000
+ 5953 strings out of 493304
+ 86049 string characters out of 6139871
+ 179098 words of memory out of 5000000
+ 9329 multiletter control sequences out of 15000+600000
  38418 words of font info for 40 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
- 44i,11n,47p,257b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 957 hyphenation exceptions out of 8191
+ 44i,11n,47p,261b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -498,7 +492,7 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 447255 bytes).
+Output written on main.pdf (5 pages, 440729 bytes).
 PDF statistics:
  78 PDF objects out of 1000 (max. 8388607)
  47 compressed objects within 1 object stream

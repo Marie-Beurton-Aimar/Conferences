@@ -68,13 +68,11 @@ general to measure and to classify anatomical details. Classification
 of biological samples can be obtained from studying morphological
 features but at this time, setting morphological markers is done
 manually. In this work, we have focused on the problem to replace
-manual operations bi automatic procedures to set landmarks which are
+manual operations by automatic procedures to set landmarks which are
 point of interests on biological images. The presented framework,
 MAELab, allows to segment, to register and to apply a SIFT descriptor
 to set landmarks. In our procedure, we have specialized the way to
-compute and applied the SIFT descriptor by modifying the search area 
-
-
+compute and applied the SIFT descriptor by modifying the search area.
 
 In the past of biology techniques, microscopic techniques were applied
 to study the structure details, but the current research requires more
@@ -203,14 +201,12 @@ candidates for the estimated landmarks. Additional, when we compare the position
 the detected points with the ground truth (manual landmarks), they are
 very far. Last, searching in whole image is very time
 consuming. To hope for a better result, we use the SIFT method with
-another way, we do not consider all points of the image as
-usually. Instead, we limit the searching space and change the region
-size around the landmark first.
+another way.
 
 
 Firstly, two images are segmented. Then, we register two lists of
 contours points. After that, the area (called patch) around each
-source landmark is defined then a larger patch is extracted in the
+source landmark is defined and a larger patch is extracted in the
 target image at the same position. The SIFT descriptor is then calculated
 as usual. But we have reduced two first stages of SIFT and
 have changed the size of the sample region as $9 \times 9$ (instead
@@ -232,22 +228,23 @@ Where:
 \end{itemize}
 The way that we apply SIFT into our work is painted in
 Fig. \ref{fig4}. To detect the target landmarks, a registration is
-computed between the source and target images. Then, the patch $P_m$
-of source and $P_s$ of the target are created with the size of $P_m$
-is smaller than the size of $P_s$. For each pixel in $P_s$, a
-sub-patch $P_s'$ is extracted with the same size of $P_m$. When the
-$P_s'$ have a part outside of $P_s$, the pixels do not belong to the
-patch will be considered. Then, the distance $L(P_m,P_s')$ is computed
+computed between the source and target images. This step is described in
+the experiment results. Then, the patch $P_s$
+of source and $P_t$ of the target are created with the size of $P_s$
+is smaller than the size of $P_t$. For each pixel in $P_t$, a
+sub-patch $P_t'$ is extracted with the same size of $P_s$. When the
+$P_t'$ have a part outside of $P_t$, the pixels do not belong to the
+patch will be considered. Then, the distance $L(P_s,P_t')$ is computed
 by using Eq. (\ref{eql2}). This work is finished when all the pixel in
-patch $P_s$ are considered. The position of estimated landmark
-corresponds to the position of the sub-patch $P_s'$ with smallest
-distance $L(P_m,P_s')$. Finally, the position of the estimated
-landmarks are set in the original position of the target image.
+patch $P_t$ are considered. The position of estimated landmark
+corresponds to the position of the sub-patch $P_t'$ with smallest
+distance $L(P_s,P_t')$. Finally, the position of the estimated
+landmark is set in the original position of the target image.
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.48\textwidth]{./images/illustration_SIFT}
-    \caption{Steps of SIFT descriptors comparisons between the patch $P_m$ of the source image and the patches $P'_s$ of the target image.}
+    \caption{Steps of SIFT descriptors comparisons between the patch $P_s$ of the source image and the patches $P'_t$ of the target image.}
     \label{fig4}
 \end{figure}
 
@@ -257,9 +254,9 @@ patch on the target image.
 
 \section{Experiments and results}
 The method is tested on two sets (left and right mandible) of
-beetles. After verifying the dataset, it remains 290 images of right
-mandibles and 286 left mandible images. In all valid images, a set of
-manual landmark is indicated by biologists: 18 for each right
+beetles. After verifying the dataset and suppressing of same unusable images (broken or hidden mandible), it remains 290 images of right
+mandibles and 286 left mandible images. In all valid images, the position
+of a set of manual landmarks is indicated by biologists: 18 for each right
 mandible, 16 for each left mandible.
 
 
@@ -268,7 +265,7 @@ landmarks on the target image. We have estimated the search space that
 contains the landmarks.
 
 
-Firstly, the segmentation is applied on both of source and the target
+Firstly, the segmentation is applied on both of source and target
 image. The Canny algorithm \cite{canny1986computational} was chosen to
 finish this step. To use the Canny algorithm, two thresholds value
 must be provided ($T_{lower}, T_{upper}$). As mentioned in
@@ -276,24 +273,26 @@ must be provided ($T_{lower}, T_{upper}$). As mentioned in
 problem. If the threshold values are unsuitable, the contours could be
 far with ground truth (fewer contours or more noise). In our case, the
 lower threshold value is indicated by analysis the histogram of the
-image \cite{leestimating}. The ratio of two threshold values is chosen
-as $1 : 3$ to consider a wide range of the values. During Canny
+image \cite{leestimating}. The ratio of two threshold values that we have chosen as $1 : 3$ to consider a wide range of the values. During Canny
 computing, the direction of the gradient of each pixel belonging to
 the contours is kept and will be used later. At the end of
-segmentation step, a simple algorithm is applied to remove the edge
+segmentation step, a simple algorithm is applied to remove edges
 inside the main contours.
 
 
-Then, the PCA iteration is computed to register two lists of contours
-points from the images \cite{shlens2014tutorial,
-  jolliffe2002principal}. The lists of contour points are used  as the
-input. The centroid point and principal axis are computed for each
-image contours. Two lists of contours points are registered by
-computing the translation and rotation parameter values. However in
-some case, the result of the segmentation step could exist the noise,
+Then, the Principal Component Analysis (PCA) is applied to register 
+two lists of contours points from the source and the target \cite{shlens2014tutorial, jolliffe2002principal}. 
+The lists of contour points are used  as the
+input. Firstly, for each list of contours points, the centroid point 
+and principal axis are computed. The centroid point coordinates are computed
+like the average coordinate of all contours points. The principal axis is
+a line connecting the centroid point to a contour point which has the minimum of average perpendicular distance to remaining contour points. Then, two lists of contours points are registered by
+computing the translation and rotation parameter values. 
+The translation is computed as the distance between the centroid points of the source and the target. The rotation angle is the angle between the principal axes of two images. However in some case, 
+the result of the segmentation step could exist the noise,
 it could affect to the registration step. To improve the registration,
 we have built up the PCA by iterating until stabilization
-(PCAI). Finally, the SIFT descriptor is finished to determine the
+(PCAI). Finally, the SIFT descriptor is achieved to determine the
 estimated landmark on the target image.
 
 
@@ -323,7 +322,7 @@ are quite near with the manual ones.
 \label{fig5}
 \end{figure}
 
-The first statistic is done on the mean accuracy of all landmarks on
+First statistics are done on the mean accuracy of all landmarks on
 the target images. The error is computed as the distance between the
 manual and corresponding estimated landmark on the target image with
 an error accepted from 1\% to 2\% of bounding box's size (when we
