@@ -58,11 +58,7 @@ ou IRM pour étudier les tissu}
 \englishabstract{Image analysis is a large field of digital image
   processing and it has applied in practice with many application in
   the different majors such as medicine, machine vision, biology,
-  ...
-
-
-
-In biology, images are widely used from a long time, to study
+  .... In biology, images are widely used from a long time, to study
 molecule structures or behaviors, tissus characteristics and in
 general to measure and to classify anatomical details. Classification
 of biological samples can be obtained from studying morphological
@@ -87,9 +83,6 @@ the method is evaluated on two set of images: left and right mandibles
 of beetle. The complete work is implemented in MAELab and freely
 available as a library.}
 
-
-
-
 \begin{document}
 \maketitle
 
@@ -108,7 +101,6 @@ biological studies and included into the classification tasks. Until
 now, the morphometric landmarks are manually identified mainly. The
 manual identification is time-consuming and could vary a lot depending on
 the operator.
-
 
 \begin{figure}[h]
 \centering
@@ -132,21 +124,19 @@ of the automatically estimated landmarks. Our framework also contains
 steps of  segmentation, registration, and 
 descriptors comparison, these points will be discussed on the
 experiments results.
-
-
 \section{Landmark descriptor}
 For each beetle, the morphometric landmarks have been manually
 set on mandibles images by the biologists: 16 and 18 landmarks
 for each left and right mandible, respectively. The considered
 problem is how to detect automatically the landmarks on the mandible
-image to replace the manual ones. In the whole of the process, the landmarks will be estimated on
-a target image by using the manual landmarks of a source
-image. Note, the source image is chosen randomly from the set of
-images.
-
+image to replace the manual ones. In the whole of the process, 
+the landmarks will be estimated on a target image by using the 
+manual landmarks of a source image. Note, the source image is 
+chosen randomly from the set of images.
 
 In this section, firstly, we have a summary about the general
-usage of SIFT. Then, we will discuss detail about our method to estimate the landmarks.
+usage of SIFT. Then, we will discuss detail about our method to 
+estimate the landmarks.
 
 \subsection{SIFT method}
 \label{secSIFT}
@@ -163,21 +153,17 @@ In the first stage, a difference of Gaussian (DoG)
 \cite{davidson2006molecular}  function is applied to identify the
 interest points on all scale and orientation of image. The keypoints
 are taken as the maximal and minimal of the result of DoG function at
-mutliple scale.
-
-The scale-space extrema detection produces too many kepoint
+mutliple scale. The scale-space extrema detection produces too many kepoint
 candidates, some of them are unstable. In the second stage of SIFT,
 the key point candidates are localized and refined by suppress the key
 points which have the low contrast or are poorly localized along an
 edge.
 
 Then, the orientation and gradient magnitude of key points are
-calculated by considered the 4-neighborhoods of them.
-
-At the end, the descriptor is computed for each key point based on the
+calculated by considered the 4-neighborhoods of them. At the end, the descriptor is computed for each key point based on the
 orientation and gradient magnitude. This is the descriptor of a region
 $16 \times 16$ pixels around the key point.
-\\
+
 By applying the original SIFT into our problem, we have succeeded
 indicating the keypoints in the image (see Fig. \ref{fig3}). But we do
 not have the result when we try to extract keypoint correspondences 
