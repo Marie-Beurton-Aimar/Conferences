@@ -58,18 +58,38 @@ ou IRM pour étudier les tissu}
 \englishabstract{Image analysis is a large field of digital image
   processing and it has applied in practice with many application in
   the different majors such as medicine, machine vision, biology,
-  ... In the traditional of biology techniques, microscopic techniques
-  were applied to study the structure details, but the current
-  research requires more accuracy in the area, perimeter, localization
-  of the object in the image by using the suitable features. In this
-  content of this paper, we will focus on the problem of setting the
-  landmarks on biological images which are used in many biological
-  studies. The landmarks are indicated by applying a combination of
-  SIFT and some techniques. Besides, we also show a difference way to
-  use SIFT descriptor with another size of the sample region. The
-  efficiency of the method is evaluated on two set of images: left and
-  right mandibles of beetle. The complete work is implemented in
-  MAELab and freely available as a library.}
+  ...
+
+
+
+In biology, images are widely used from a long time, to study
+molecule structures or behaviors, tissus characteristics and in
+general to measure and to classify anatomical details. Classification
+of biological samples can be obtained from studying morphological
+features but at this time, setting morphological markers is done
+manually. In this work, we have focused on the problem to replace
+manual operations bi automatic procedures to set landmarks which are
+point of interests on biological images. The presented framework,
+MAELab, allows to segment, to register and to apply a SIFT descriptor
+to set landmarks. In our procedure, we have specialized the way to
+compute and applied the SIFT descriptor by modifying the search area 
+
+
+
+In the past of biology techniques, microscopic techniques were applied
+to study the structure details, but the current research requires more
+accuracy in the area, perimeter, localization of the object in the
+image by using the suitable features. In this content of this paper,
+we will focus on the problem of setting the landmarks on biological
+images which are used in many biological studies. The landmarks are
+indicated by applying a combination of SIFT and some
+techniques. Besides, we also show a difference way to use SIFT
+descriptor with another size of the sample region. The efficiency of
+the method is evaluated on two set of images: left and right mandibles
+of beetle. The complete work is implemented in MAELab and freely
+available as a library.}
+
+
 
 
 \begin{document}
@@ -79,7 +99,8 @@ ou IRM pour étudier les tissu}
 Morphometry analysis is an important field of image analysis in
 biology. It is used to characterize the shape variations of the
 organisms. From obtained information, the biologists can evaluate the
-evolution of an organism or detect differences between several ones. Depending on the requirements of the application, the
+evolution of an organism or detect differences between several
+ones. Depending on the requirements of the application, the
 output of analysis process can be measures of shape, color ... or
 identificaton of pattern or landmark (points of interest) positions. Landmarks are
 points along an image outline that store a lot of important
@@ -95,45 +116,48 @@ the operator.
 \centering
 \subfloat[Left mandible]{\label{figrbox2}\includegraphics[width=0.22\textwidth]{./images/lm}}~~
 \subfloat[Right mandible]{\label{figrbox1}\includegraphics[width=0.22\textwidth]{./images/rm}}
-\caption{Example of beetle mandibles from the studied data set.}
+\caption{Example of beetle mandibles from the studied data set with
+  manual landmarks.}
 \label{fig1}
 \end{figure}
 
-In this paper, we focus on the method to automatically determine the
-landmarks in 2D biological images (see Fig. 1), specifically beetle
-images. The proposed method consists segmentation, registration, and
-descriptors comparison techniques. Besides, this method is also shown
-as a difference ways to apply the SIFT descriptor for keypoint
-detection. The work is evaluated on the dataset of beetles from
-Brittany lands with a collection of 293 beetles. For each beetle, a
-set of landmarks has been manually located by the biologists. In our
+In this paper, we focus on a specific part of our framework which
+consists of modifying the current way to compute SIFT descriptor to
+insert information about landmark area in the source image to reduce
+the size in one hand of the source patch and in the other hand in the
+target search space. The work is evaluated on the dataset of beetles from
+Brittany lands with a collection of 293 beetles. The first step of
+this work concerns the left and the right mandibles. For each beetle, a
+set of landmarks has been manually located by the biologists (see Fig. 1). In our
 study, we used that dataset as ground truth to evaluate the position
-of the automatically estimated landmarks.
+of the automatically estimated landmarks. Our framework also contains
+steps of  segmentation, registration, and 
+descriptors comparison, these points will be discussed on the
+experiments results.
+
 
 \section{Landmark descriptor}
 For each beetle, the morphometric landmarks have been manually
-identified on mandibles images by the biologists: 16 and 18 landmarks
-for each left and right mandible, respectively. The consideration
+set on mandibles images by the biologists: 16 and 18 landmarks
+for each left and right mandible, respectively. The considered
 problem is how to detect automatically the landmarks on the mandible
-image to replace the manual ones. In the whole of the process, a
-source and a target image are used. The landmarks will be estimated on
-the target image by using the manual landmarks of the source
+image to replace the manual ones. In the whole of the process, the landmarks will be estimated on
+a target image by using the manual landmarks of a source
 image. Note, the source image is chosen randomly from the set of
 images.
 
 
 In this section, firstly, we have a summary about the general
-utilization of SIFT. Then, we will discuss detail about our method
-with a difference way of SIFT to estimate the landmarks.
+usage of SIFT. Then, we will discuss detail about our method to estimate the landmarks.
 
 \subsection{SIFT method}
 \label{secSIFT}
 SIFT method has been proposed by Lowe \cite{lowe1999object,
   lowe2004distinctive}. It is used to extract distinctive invariant
-features from the images. Besides, the features from SIFT can use to
+features from the images. Besides, the features from SIFT can be used to
 match between different views of source and target images such as
 rotation, scale, noise. SIFT method includes four stages: (1)
-scale-space extrema detection stage, (2) keypoint localization, (3)
+scale-space extrema detection, (2) keypoint localization, (3)
 orientation assignment, and (4) keypoint descriptor.
 
 
@@ -158,11 +182,12 @@ $16 \times 16$ pixels around the key point.
 \\
 By applying the original SIFT into our problem, we have succeeded
 indicating the keypoints in the image (see Fig. \ref{fig3}). But we do
-not have the result when we try to extract correspondence keypoints
-between the source and target image. The problem is carried from the
-choosing the best points from the large set of the candidates. This
-problem is solved in our method by limit the search space before
-applied the SIFT, plus changing the size of the grid to calculate the
+not have the result when we try to extract keypoint correspondences 
+between the source and target image. The problem is carried from
+choosing the best points from the large set of the candidates.
+To solve this problem, we have modified the method in order to limit
+the search space before applying the SIFT computing. We have also
+change the size of the gird to calculate the
 SIFT descriptor.
 
 \begin{figure}[htb]
@@ -173,10 +198,10 @@ SIFT descriptor.
 \end{figure}
 \subsection{SIFT using into landmark area}
 As mentioned in section \ref{secSIFT}, we have tried to use original
-of SIFT to detect the landmarks. But the result shows a lot of
-candidates for the estimated landmarks. Additional, the position of
-the detected points are very far when we compare with the ground truth
-ones (manual landmarks), and searching in whole image is very time
+of SIFT to detect the landmarks. But the result contains a lot of
+candidates for the estimated landmarks. Additional, when we compare the position of
+the detected points with the ground truth (manual landmarks), they are
+very far. Last, searching in whole image is very time
 consuming. To hope for a better result, we use the SIFT method with
 another way, we do not consider all points of the image as
 usually. Instead, we limit the searching space and change the region
@@ -185,9 +210,9 @@ size around the landmark first.
 
 Firstly, two images are segmented. Then, we register two lists of
 contours points. After that, the area (called patch) around each
-source landmark is detected then a larger patch is extracted in the
-target image at the same position. The SIFT descriptor is calculated
-as the original way. But we have reduced two first stages of SIFT and
+source landmark is defined then a larger patch is extracted in the
+target image at the same position. The SIFT descriptor is then calculated
+as usual. But we have reduced two first stages of SIFT and
 have changed the size of the sample region as $9 \times 9$ (instead
 $16 \times 16$). This size has been obtained after several tests. The
 SIFT descriptor for the patch is also an histogram containing the sum
