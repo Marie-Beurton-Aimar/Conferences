@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.23)  10 APR 2017 17:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.23)  10 APR 2017 17:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -257,25 +257,25 @@ LaTeX Warning: Label `sub@figrbox1' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 80.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Info: Redefining \degres on input line 86.
-LaTeX Info: Redefining \dots on input line 86.
-LaTeX Info: Redefining \up on input line 86.
+LaTeX Info: Redefining \degres on input line 80.
+LaTeX Info: Redefining \dots on input line 80.
+LaTeX Info: Redefining \up on input line 80.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -342,64 +342,65 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 87.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 87.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 81.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 81.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 87.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 89.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 83.
 
 <./images/lm.jpg, id=1, 97.86563pt x 154.32657pt>
 File: ./images/lm.jpg Graphic file (type jpg)
  <use ./images/lm.jpg>
-Package pdftex.def Info: ./images/lm.jpg used on input line 107.
+Package pdftex.def Info: ./images/lm.jpg used on input line 101.
 (pdftex.def)             Requested size: 103.56644pt x 163.32397pt.
 
 <./images/rm.jpg, id=2, 97.86563pt x 154.32657pt>
 File: ./images/rm.jpg Graphic file (type jpg)
  <use ./images/rm.jpg>
-Package pdftex.def Info: ./images/rm.jpg used on input line 108.
+Package pdftex.def Info: ./images/rm.jpg used on input line 102.
 (pdftex.def)             Requested size: 103.56644pt x 163.32397pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (1.30319pt too wide) in paragraph at lines 128--136
+Overfull \hbox (1.30319pt too wide) in paragraph at lines 122--130
 \T1/ptm/m/n/10 The source image is cho-sen ran-domly from the set of all images
 . 
  []
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 135.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 141.
-
 <./images/siftc.jpg, id=11, 75.28125pt x 67.75313pt>
 File: ./images/siftc.jpg Graphic file (type jpg)
  <use ./images/siftc.jpg>
-Package pdftex.def Info: ./images/siftc.jpg used on input line 179.
+Package pdftex.def Info: ./images/siftc.jpg used on input line 173.
 (pdftex.def)             Requested size: 155.35362pt x 139.84589pt.
 
-[2 <./images/lm.jpg> <./images/rm.jpg> <./images/siftc.jpg>]
-<./images/illustration_SIFT.png, id=22, 407.5225pt x 159.59625pt>
+<./images/illustration_SIFT.png, id=12, 407.5225pt x 159.59625pt>
 File: ./images/illustration_SIFT.png Graphic file (type png)
 
 <use ./images/illustration_SIFT.png>
-Package pdftex.def Info: ./images/illustration_SIFT.png used on input line 231.
+Package pdftex.def Info: ./images/illustration_SIFT.png used on input line 225.
 
 (pdftex.def)             Requested size: 207.13289pt x 81.11781pt.
+ [2 <./images/lm.jpg> <./images/rm.jpg> <./images/siftc.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Overfull \hbox (3.39642pt too wide) in paragraph at lines 294--297
+
+Overfull \hbox (3.39642pt too wide) in paragraph at lines 288--291
 \T1/ptm/m/n/10 dible with ma-nual and es-ti-ma-ted land-marks. The es-ti-ma-ted
  land-
  []
@@ -407,16 +408,16 @@ Overfull \hbox (3.39642pt too wide) in paragraph at lines 294--297
 <./images/mg_rs.png, id=23, 150.5625pt x 225.84375pt>
 File: ./images/mg_rs.png Graphic file (type png)
  <use ./images/mg_rs.png>
-Package pdftex.def Info: ./images/mg_rs.png used on input line 302.
+Package pdftex.def Info: ./images/mg_rs.png used on input line 296.
 (pdftex.def)             Requested size: 103.56644pt x 155.35678pt.
 
 <./images/md_rs.png, id=25, 150.5625pt x 225.84375pt>
 File: ./images/md_rs.png Graphic file (type png)
  <use ./images/md_rs.png>
-Package pdftex.def Info: ./images/md_rs.png used on input line 303.
+Package pdftex.def Info: ./images/md_rs.png used on input line 297.
 (pdftex.def)             Requested size: 103.56644pt x 155.35678pt.
 
-Overfull \hbox (3.64328pt too wide) in paragraph at lines 308--316
+Overfull \hbox (3.64328pt too wide) in paragraph at lines 302--310
 \T1/ptm/m/n/10 tance bet-ween the ma-nual and the cor-res-pon-ding es-ti-ma-ted
  land-
  []
@@ -425,45 +426,45 @@ Overfull \hbox (3.64328pt too wide) in paragraph at lines 308--316
 File: ./images/mdresult.jpg Graphic file (type jpg)
 
 <use ./images/mdresult.jpg>
-Package pdftex.def Info: ./images/mdresult.jpg used on input line 319.
+Package pdftex.def Info: ./images/mdresult.jpg used on input line 313.
 (pdftex.def)             Requested size: 103.56644pt x 97.35547pt.
 
 <./images/mgresult.jpg, id=27, 200.75pt x 182.6825pt>
 File: ./images/mgresult.jpg Graphic file (type jpg)
 
 <use ./images/mgresult.jpg>
-Package pdftex.def Info: ./images/mgresult.jpg used on input line 320.
+Package pdftex.def Info: ./images/mgresult.jpg used on input line 314.
 (pdftex.def)             Requested size: 103.56644pt x 94.24838pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3 <./images/illustration_SIFT.png> <./images/mg_rs.png> <./images/md_rs.png>]
-
+ [3 <./images/illustration_SIFT.png> <./images/mg_rs.png> <./images/md_rs.png> 
+<./images/mdresult.jpg> <./images/mgresult.jpg>]
 <./images/md_chartlms.jpg, id=33, 892.33376pt x 545.03625pt>
 File: ./images/md_chartlms.jpg Graphic file (type jpg)
 
 <use ./images/md_chartlms.jpg>
-Package pdftex.def Info: ./images/md_chartlms.jpg used on input line 349.
+Package pdftex.def Info: ./images/md_chartlms.jpg used on input line 343.
 (pdftex.def)             Requested size: 233.02647pt x 142.32982pt.
 
 <./images/mg_chartlms.jpg, id=34, 731.73375pt x 508.90125pt>
 File: ./images/mg_chartlms.jpg Graphic file (type jpg)
 
 <use ./images/mg_chartlms.jpg>
-Package pdftex.def Info: ./images/mg_chartlms.jpg used on input line 355.
+Package pdftex.def Info: ./images/mg_chartlms.jpg used on input line 349.
 (pdftex.def)             Requested size: 222.66747pt x 154.86133pt.
 
-Overfull \hbox (9.77734pt too wide) in paragraph at lines 360--373
+Overfull \hbox (9.77734pt too wide) in paragraph at lines 354--367
 \T1/ptm/m/n/10 dibles. Firstly, each man-dible has been seg-men-ted and its con
 tours
  []
 
-(./main.bbl) [4 <./images/mdresult.jpg> <./images/mgresult.jpg> <./images/md_ch
-artlms.jpg> <./images/mg_chartlms.jpg>] (./main.aux)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+(./main.bbl) [4 <./images/md_chartlms.jpg> <./images/mg_chartlms.jpg>]
+(./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -471,7 +472,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  5953 strings out of 493304
  86049 string characters out of 6139871
- 181097 words of memory out of 5000000
+ 180700 words of memory out of 5000000
  9329 multiletter control sequences out of 15000+600000
  38418 words of font info for 40 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -487,7 +488,7 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (4 pages, 440483 bytes).
+Output written on main.pdf (4 pages, 440072 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream

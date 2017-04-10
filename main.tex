@@ -55,33 +55,27 @@ d'acquisition (photosdepuis l'imagerie microscopique
 pour étudier les structures anatomiques jusqu'au scanner, tomographie
 ou IRM pour étudier les tissu.}
 
-\englishabstract{Image analysis is a large field of digital image
+\englishabstract{Image analysis is a large field in image
   processing and it has applied in practice with many application in
   the different majors such as medicine, machine vision, biology,
-  .... In biology, images are widely used from a long time, to study
+  ... In biology, images are widely used from a long time, to study
 molecule structures or behaviors, tissus characteristics and in
 general to measure and to classify anatomical details. Classification
 of biological samples can be obtained from studying morphological
 features but at this time, setting morphological markers is done
 manually. In this work, we have focused on the problem to replace
 manual operations by automatic procedures to set landmarks which are
-point of interests on biological images. The presented framework,
-MAELab, allows to segment, to register and to apply a SIFT descriptor
-to set landmarks. In our procedure, we have specialized the way to
-compute and applied the SIFT descriptor by modifying the search area.
-
-In the past of biology techniques, microscopic techniques were applied
-to study the structure details, but the current research requires more
-accuracy in the area, perimeter, localization of the object in the
-image by using the suitable features. In this content of this paper,
-we will focus on the problem of setting the landmarks on biological
-images which are used in many biological studies. The landmarks are
-indicated by applying a combination of SIFT and some
-techniques. Besides, we also show a difference way to use SIFT
-descriptor with another size of the sample region. The efficiency of
+point of interests in biological images. This paper presents how we
+  have designed a specific way to use the SIFT descriptor to improve
+  the results that we have obtained before to achieve this task. The
+  two main characteristics of our method are the reduction of the
+  patch area to compute de source descriptor and the definition of a
+  restrictive search area of the target. The efficiency of
 the method is evaluated on two set of images: left and right mandibles
-of beetle. The complete work is implemented in MAELab and freely
-available as a library.}
+of beetles belonging to a study of the national institute of
+  agriculture (INRA). The complete method is implemented in a
+  framework called  MAELab and freely
+available as a C++ library.}
 
 \begin{document}
 \maketitle
