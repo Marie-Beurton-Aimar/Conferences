@@ -60,11 +60,11 @@ médicale ou biologique, en vision par ordinateur ... En biologie, les
   image, et à l'estimation automatique de leur position. Pour cela,
   nous avons travaillé sur une utilisation particulière du descripteur
   SIFT pour identifier précisément ces landmarks dans une image cible,
-  à partir d'un jeu de landmarks manuels positionés manuellement dans
+  à partir d'un jeu de landmarks manuels positionnés manuellement dans
   une image source. Nous avons pour cela réduit d'une part la matrice
   de calcul du descripteur et d'autre part défini une zone de
   recherche dans l'image cible au lieu d'appliquer la recherche à
-  toute l'image. Notre chaine de traitemnet qui contient par ailleurs
+  toute l'image. Notre chaîne de traitement qui contient par ailleurs
   une segmentation et une étape d'alignement des images, a été testée
   sur un ensemble de 290 images de mandibules de carabes pour lesquels
   nous avons disposé d'une vérité terrain consistant en un jeu de
@@ -75,8 +75,8 @@ médicale ou biologique, en vision par ordinateur ... En biologie, les
 \englishabstract{Image analysis is a large field in image
   processing and it has applied in practice with many application in
   the different majors such as medicine, machine vision, biology,
-  ... In biology, images are widely used from a long time, to study
-molecule structures or behaviors, tissus characteristics and in
+  ... In biology, images are widely used for a long time, to study
+molecule structures or behaviors, tissues characteristics and in
 general to measure and to classify anatomical details. Classification
 of biological samples can be obtained from studying morphological
 features but at this time, setting morphological markers is done
@@ -108,7 +108,7 @@ identificaton of pattern or landmark (points of interest) positions. Landmarks a
 points along an image outline that store a lot of important
 information about the shape of the image. The morphometric landmarks
 are precise points defined by the biologists. They are used in many
-biological studies and included into the classification tasks. Until
+biological studies \cite{goczal2016citizen, hoque2015morphometric} and included into the classification tasks. Until
 now, the morphometric landmarks are mainly manually identified. The
 manual identification is time-consuming and could vary a lot depending on
 the operator.
@@ -183,7 +183,7 @@ between the source and target image. The problem is carried from
 choosing the best points from the large set of the candidates.
 To solve this problem, we have modified the method in order to limit
 the search space before applying the SIFT computing. We have also
-change the size of the gird to calculate the
+change the size of the region around the key point to calculate the
 SIFT descriptor.
 \begin{figure}[htb]
     \centering
@@ -205,7 +205,7 @@ Firstly, two images are segmented and two lists of
 contours points are registered. Then, the area (called patch) around each
 source landmark is defined and a larger patch is extracted in the
 target image at the same position. The SIFT descriptor is then calculated
-as usual. But we have reduced two first steps of SIFT and
+as usual on gray-scale image. But we have reduced two first steps of SIFT and
 have changed the size of the sample regions for $9 \times 9$ (instead of
 $16 \times 16$). This size has been empirically determined after several tests. The
 SIFT descriptor for the patch is also an histogram containing the sum
@@ -287,7 +287,10 @@ The translation is computed as the distance between the centroid points of the s
 the result of the segmentation step could contains noise,
 affecting to the registration step. To improve the registration,
 we have built up an iterative PCA until stabilization
-(PCAI). Finally, the SIFT descriptor allows to determine the
+(PCAI). PCA iteration stops automatically when the difference of the
+angle between two images is less than 1.5 degrees (this value is
+indicated through experiment).
+ Finally, the SIFT descriptor allows to determine the
 estimated landmark on the target image.
 
 
@@ -383,7 +386,7 @@ improved. The next step consists to increase the number of well positioned landm
 mandible.
 
 
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{references}
 
 \end{document}

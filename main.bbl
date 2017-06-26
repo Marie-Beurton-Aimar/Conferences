@@ -1,37 +1,16 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{bland1996statistics}
-J~Martin Bland and Douglas~G Altman.
-\newblock Statistics notes: measurement error.
-\newblock {\em Bmj}, 313(7059):744, 1996.
+\bibitem{goczal2016citizen}
+J~Gocza{\l}, R~Rossa, J~Sweeney, and A~Tofilski.
+\newblock Citizen monitoring of invasive species: wing morphometry as a tool
+  for detection of alien tetropium species.
+\newblock {\em Journal of Applied Entomology}, 2016.
 
-\bibitem{canny1986computational}
-John Canny.
-\newblock A computational approach to edge detection.
-\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
-  on}, (6):679--698, 1986.
-
-\bibitem{davidson2006molecular}
-Michael~W Davidson and Mortimer Abramowitz.
-\newblock Molecular expressions microscopy primer: Digital image
-  processing-difference of gaussians edge enhancement algorithm.
-\newblock {\em Olympus America Inc., and Florida State University}, 2006.
-
-\bibitem{jolliffe2002principal}
-Ian Jolliffe.
-\newblock {\em Principal component analysis}.
-\newblock Wiley Online Library, 2002.
-
-\bibitem{adaptiveCanny}
-Dehua~Li Jun~Zeng.
-\newblock An adaptive canny edge detector using histogram concavity analysis.
-\newblock {\em International Journal of Digital Content Technology and its
-  Applications}, 5, 2011.
-
-\bibitem{leestimating}
-L~L{\^e}~V{\~a}nh, M~Beurton-Aimar, JP~Salmon, A~Marie, and N~Parisey.
-\newblock Estimating landmarks on 2d images of beetle mandibles.
-\newblock {\em WSCG}, 2016.
+\bibitem{hoque2015morphometric}
+Md~Mesbahul Hoque, Shamim Ara, Shahanaz Begum, AHM~Mostafa Kamal, and Sharmina
+  Sayeed.
+\newblock Morphometric analysis of dry adult human mandibular ramus.
+\newblock {\em Bangladesh Journal of Anatomy}, 12(1):14--16, 2015.
 
 \bibitem{lowe1999object}
 David~G Lowe.
@@ -44,9 +23,42 @@ David~G Lowe.
 \newblock Distinctive image features from scale-invariant keypoints.
 \newblock {\em International journal of computer vision}, 60(2):91--110, 2004.
 
+\bibitem{davidson2006molecular}
+Michael~W Davidson and Mortimer Abramowitz.
+\newblock Molecular expressions microscopy primer: Digital image
+  processing-difference of gaussians edge enhancement algorithm.
+\newblock {\em Olympus America Inc., and Florida State University}, 2006.
+
+\bibitem{canny1986computational}
+John Canny.
+\newblock A computational approach to edge detection.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, (6):679--698, 1986.
+
+\bibitem{adaptiveCanny}
+Dehua~Li Jun~Zeng.
+\newblock An adaptive canny edge detector using histogram concavity analysis.
+\newblock {\em International Journal of Digital Content Technology and its
+  Applications}, 5, 2011.
+
+\bibitem{leestimating}
+L~L{\^e}~V{\~a}nh, M~Beurton-Aimar, JP~Salmon, A~Marie, and N~Parisey.
+\newblock Estimating landmarks on 2d images of beetle mandibles.
+\newblock {\em WSCG}, 2016.
+
 \bibitem{shlens2014tutorial}
 Jonathon Shlens.
 \newblock A tutorial on principal component analysis.
 \newblock {\em arXiv preprint arXiv:1404.1100}, 2014.
+
+\bibitem{jolliffe2002principal}
+Ian Jolliffe.
+\newblock {\em Principal component analysis}.
+\newblock Wiley Online Library, 2002.
+
+\bibitem{bland1996statistics}
+J~Martin Bland and Douglas~G Altman.
+\newblock Statistics notes: measurement error.
+\newblock {\em Bmj}, 313(7059):744, 1996.
 
 \end{thebibliography}
