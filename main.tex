@@ -49,7 +49,7 @@
 
 \frenchabstract{L'analyse d'images est une des étapes majeures du
   traitement d'images numériques, on l'applique aussi bien en imagerie
-médicale ou biologique, en vision par ordinateur ... En biologie, les
+médicale ou biologique, qu'en vision par ordinateur, video... En biologie, les
   images sont très utilisées, entre autre pour analyser la structure
   ou le comportement de molécules, les caractéristiques des tissus ou
   encore pour mesurer et classifier des détails anatomiques. La
@@ -60,21 +60,21 @@ médicale ou biologique, en vision par ordinateur ... En biologie, les
   image, et à l'estimation automatique de leur position. Pour cela,
   nous avons travaillé sur une utilisation particulière du descripteur
   SIFT pour identifier précisément ces landmarks dans une image cible,
-  à partir d'un jeu de landmarks manuels positionnés manuellement dans
+  à partir d'un jeu de landmarks positionnés manuellement dans
   une image source. Nous avons pour cela réduit d'une part la matrice
   de calcul du descripteur et d'autre part défini une zone de
   recherche dans l'image cible au lieu d'appliquer la recherche à
-  toute l'image. Notre chaîne de traitement qui contient par ailleurs
+  toute l'image. Notre chaîne de traitements qui contient par ailleurs
   une segmentation et une étape d'alignement des images, a été testée
-  sur un ensemble de 290 images de mandibules de carabes pour lesquels
+  sur un ensemble de 290 images de mandibules de carabes pour lesquelles
   nous avons disposé d'une vérité terrain consistant en un jeu de
-  landmarks manuels fourni par les biologistes de l'INRA pour chaque image.
+  landmarks manuels fournis par les biologistes de l'INRA pour chaque image.
   La plateforme de traitement appelée MAELab est disponible à l'heure actuelle sous
   forme de librairie librement accessible sur github.}
 
 \englishabstract{Image analysis is a large field in image
   processing and it has applied in practice with many application in
-  the different majors such as medicine, machine vision, biology,
+  the different majors such as medicine, computer vision, biology,
   ... In biology, images are widely used for a long time, to study
 molecule structures or behaviors, tissues characteristics and in
 general to measure and to classify anatomical details. Classification
@@ -92,7 +92,7 @@ the method is evaluated on two set of images: left and right mandibles
 of beetles belonging to a study of the national institute of
   agriculture (INRA). The complete method is implemented in a
   framework called  MAELab and freely
-available as a C++ library.}
+available on GitHub.}
 
 \begin{document}
 \maketitle
@@ -115,8 +115,8 @@ the operator.
 
 \begin{figure}[h]
 \centering
-\subfloat[Left mandible]{\label{figrbox2}\includegraphics[width=0.17\textwidth]{./images/lm}}~~
-\subfloat[Right mandible]{\label{figrbox1}\includegraphics[width=0.17\textwidth]{./images/rm}}
+\subfloat[Left mandible]{\label{figrbox2}\includegraphics[width=0.15\textwidth]{./images/lm}}~~
+\subfloat[Right mandible]{\label{figrbox1}\includegraphics[width=0.15\textwidth]{./images/rm}}
 \caption{Example of beetle mandibles from the studied data set with
   manual landmarks.}
 \label{fig1}
@@ -127,7 +127,7 @@ consists to introduce the computing of SIFT descriptors. This information
 about landmark areas allows to reduce the size of the source patch and the
 target search space at the same time.
 These works are evaluated on a dataset corresponding to a collection of
-293 beetles from Brittany lands. The first step of
+290 beetles from Brittany lands. The first step of
 these works concerns the left and right mandibles. For each beetle, a
 set of landmarks has been manually positioned by the biologists (see Fig. 1). In our
 study, we used this dataset as ground truth to evaluate the position
@@ -187,7 +187,7 @@ change the size of the region around the key point to calculate the
 SIFT descriptor.
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=0.25\textwidth]{./images/siftc}
+    \includegraphics[width=0.20\textwidth]{./images/siftc}
     \caption{SIFT keypoints in a right mandible.}
     \label{fig3}
 \end{figure}
@@ -289,7 +289,7 @@ affecting to the registration step. To improve the registration,
 we have built up an iterative PCA until stabilization
 (PCAI). PCA iteration stops automatically when the difference of the
 angle between two images is less than 1.5 degrees (this value is
-indicated through experiment).
+indicated through the experiments).
  Finally, the SIFT descriptor allows to determine the
 estimated landmark on the target image.
 
@@ -313,8 +313,8 @@ are quite near with the manual ones, as conformed by the following statistics.
 \begin{figure}[h]
 
 \centering
-\subfloat[Left mandible]{\label{figrbox2}\includegraphics[width=0.17\textwidth]{./images/mg_rs}}~~
-\subfloat[Right mandible]{\label{figrbox1}\includegraphics[width=0.17\textwidth]{./images/md_rs}}
+\subfloat[Left mandible]{\label{figrbox2}\includegraphics[width=0.15\textwidth]{./images/mg_rs}}~~
+\subfloat[Right mandible]{\label{figrbox1}\includegraphics[width=0.15\textwidth]{./images/md_rs}}
 \caption{The manual (in red) and estimated (in yellow) landmarks on a mandible.}
 \label{fig5}
 \end{figure}
@@ -330,8 +330,8 @@ right mandibles and \textbf{78.82\%} for left mandibles.
 
 \begin{figure}[h]
 \centering
-\subfloat[Set of right mandibles.]{\label{figmdresult}\includegraphics[width=0.18\textwidth]{./images/mdresult}}~~
-\subfloat[Set of left mandibles.]{\label{figmgresult}\includegraphics[width=0.18\textwidth]{./images/mgresult}}
+\subfloat[Set of right mandibles.]{\label{figmdresult}\includegraphics[width=0.15\textwidth]{./images/mdresult}}~~
+\subfloat[Set of left mandibles.]{\label{figmgresult}\includegraphics[width=0.15\textwidth]{./images/mgresult}}
 \caption{The mean proportion of well and bad landmark locations of the two sets of left and right mandibles.}
 \label{fig6}
 \end{figure}
@@ -356,17 +356,18 @@ the contours at the base of mandibles higher than on the top part.
 The software MAELab proposes an implementation of the SIFT version
 for the automatic landmarks estimation. 
 It is written in C++ and distributed as
-free library on the Github.
+free library on the Github\footnote{MAELab can be directly
+and freely obtained by request at the authors.}.
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=0.43\textwidth]{./images/md_chartlms}
+    \includegraphics[width=0.40\textwidth]{./images/md_chartlms}
     \caption{The proportions of well estimated landmarks for each model landmark of right mandibles.}
     \label{fig7}
 \end{figure}
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=0.43\textwidth]{./images/mg_chartlms}
+    \includegraphics[width=0.40\textwidth]{./images/mg_chartlms}
     \caption{The proportions of well estimated landmarks for each model landmark of left mandibles.}
     \label{fig8}
 \end{figure}
