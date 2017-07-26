@@ -110,8 +110,8 @@
 
 
 \title{SIFT descriptor to set landmark on biological images}
-\author{Van Linh LE$^1$, Marie BEURTON-AIMAR$^1$, Adrien KRAHENBUHL$^1$, Nicolas PARISEY$^2$\\
-  $^1$LaBRI - University of Bordeaux, $^2$IGEPP, INRA -Rennes\\
+\author{Van Linh LE$^{1,3}$, Marie BEURTON-AIMAR$^1$, Adrien KRAHENBUHL$^1$, Nicolas PARISEY$^2$\\
+  $^1$LaBRI - University of Bordeaux, $^2$IGEPP, INRA - Rennes, $^3$ ITDLU - Vietnam\\
   \texttt{van-linh.le,beurton,adrien.krahenbuhl@labri.fr,nparisey@rennes.inra.fr}
 }
 
@@ -151,7 +151,7 @@
   %% #1 - where (optional), #2 - title, #3 - text
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
   \blocknode%
-  {Starting}%
+  {Problem}%
   {Start with the following document:
 
     \coloredbox{colorthree!50!}{
@@ -217,7 +217,7 @@
   %% box is the alias of the previous block, so we can refer to its boundaries
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \blocknode{Making Title}%
+  \blocknode{SIFT}%
   {To make title, use the standard commands \textbackslash title and
     \textbackslash author in the preamble, and then the following macro:
     \begin{itemize}
@@ -278,7 +278,7 @@
   
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \blocknodew[($(currenty)-(3.5,0)$)]{30}{Variable Width Block Nodes} %
+  \blocknodew[($(currenty)-(3.5,0)$)]{30}{SIFT and landmarks} %
   { You can also create blocks of arbitrary width
     \begin{itemize}
     \item[] \textbackslash blocknodew[coordinate]\{Block width\}\{Block Title\}%
@@ -328,7 +328,7 @@
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
   \blocknode%
-  {Block Nodes in the Second Column}%
+  {Segmentation}%
   {To start the second column or the third column use commands
     \begin{itemize}
     \item[] \textbackslash startsecondcolumn, and \textbackslash startthirdcolumn.
@@ -349,7 +349,7 @@
 
   
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \blocknode{Useful Macro Within Block Nodes}%
+  \blocknode{Registration}%
   {There are three types of colored boxes/blocks that you can use inside block
     nodes to highlight information. \\
     
@@ -440,7 +440,7 @@
   \startthirdcolumn
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \blocknode {Personalizing the Poster}%
+  \blocknode {Result}%
   {It is possible to adjust the layout of the poster. To impose your own
     setting, you can use these macros:
     \begin{itemize}

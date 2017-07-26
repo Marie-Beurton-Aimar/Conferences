@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.25)  25 JUL 2017 22:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.25)  26 JUL 2017 21:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1158,20 +1158,20 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 528.
 Here is how much of TeX's memory you used:
  19930 strings out of 494883
  402489 string characters out of 6178693
- 588230 words of memory out of 5000000
+ 589148 words of memory out of 5000000
  22846 multiletter control sequences out of 15000+600000
  75745 words of font info for 72 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  62i,19n,84p,438b,1493s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/kurier/mi-kurier.enc}{/usr/sha
-re/texlive/texmf-dist/fonts/enc/dvips/kurier/sy-kurier.enc}{/usr/share/texlive/
-texmf-dist/fonts/enc/dvips/kurier/ec-kurier.enc} </home/vanlinh/.texmf-var/font
-s/pk/ljfour/public/cmbright/ebtl10.1792pk>{/usr/share/texlive/texmf-dist/fonts/
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/kurier/sy-kurier.enc}{/usr/sha
+re/texlive/texmf-dist/fonts/enc/dvips/kurier/ec-kurier.enc} </home/vanlinh/.tex
+mf-var/fonts/pk/ljfour/public/cmbright/ebtl10.1792pk>{/usr/share/texlive/texmf-
+dist/fonts/enc/dvips/kurier/mi-kurier.enc}{/usr/share/texlive/texmf-dist/fonts/
 enc/dvips/kurier/rm-kurier.enc}</usr/share/texlive/texmf-dist/fonts/type1/nowac
 ki/kurier/kurierb.pfb></usr/share/texlive/texmf-dist/fonts/type1/nowacki/kurier
 /kurierr.pfb></usr/share/texlive/texmf-dist/fonts/type1/nowacki/kurier/kurierri
 .pfb>
-Output written on gretsi_poster.pdf (1 page, 99871 bytes).
+Output written on gretsi_poster.pdf (1 page, 99682 bytes).
 PDF statistics:
  143 PDF objects out of 1000 (max. 8388607)
  74 compressed objects within 1 object stream
