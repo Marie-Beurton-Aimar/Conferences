@@ -100,18 +100,19 @@
 %\usepackage[math]{iwona}
 \usepackage[math]{kurier}
 \usepackage[T1]{fontenc}
-
-
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{float}
 %% add your packages here
 \usepackage{hyperref}
 
-
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
 
 
 
 \title{SIFT descriptor to set landmark on biological images}
 \author{Van Linh LE$^{1,3}$, Marie BEURTON-AIMAR$^1$, Adrien KRAHENBUHL$^1$, Nicolas PARISEY$^2$\\
-  $^1$LaBRI - University of Bordeaux, $^2$IGEPP, INRA - Rennes, $^3$ ITDLU - Vietnam\\
+  $^1$LaBRI - UMR 5800, Univ. Bordeaux, $^2$INRA - IGEPP UMR 1349, France $^3$ IT - DLU,Vietnam\\
   \texttt{van-linh.le,beurton,adrien.krahenbuhl@labri.fr,nparisey@rennes.inra.fr}
 }
 
@@ -151,63 +152,44 @@
   %% #1 - where (optional), #2 - title, #3 - text
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
   \blocknode%
-  {Problem}%
-  {Start with the following document:
-
-    \coloredbox{colorthree!50!}{
-      \textbackslash documentclass\{a0poster\}\\
-      \textbackslash usepackage\{fancytikzposter\} \% here most of the things are
-      defined \\
-
-      \% change parameters only after this line\\
-
-      \textbackslash usepackage{\small[margin=\textbackslash margin \ cm,
-        paperwidth=84.1cm, paperheight=118.9cm]\{ geometry\}} \\
-
-      \textbackslash title\{Title\}\\
-      \textbackslash author\{Author\textbackslash\textbackslash
-      Institution\textbackslash\textbackslash
-      \textbackslash texttt\{email\}\}\\
-      \textbackslash begin\{document\}\\
-      \textbackslash AddToShipoutPicture\{\textbackslash BackgroundPicture\}\\
-
-
-      \textbackslash noindent \\
-      \textbackslash begin\{tikzpicture\} \\
-      \textbackslash initializesizeandshifts \\
-
-      \textbackslash titleblock\{50\}\{1\}\\
-      \textbackslash blocknode\{Block Title\}\{Block Content\}\\
-      \textbackslash startsecondcolumn\\
-      \textbackslash blocknode\{Block Title 2\}\{Block Content 2\}\\
-      \textbackslash end\{tikzpicture\}\\
-      \textbackslash end\{document\}
-    }
+  {Context}%
+  {
+	  \begin{itemize}
+   		 \item Morphometry analysis is a way to characterize the shape variations of the organisms,
+   		 \item Morphometric characteristics have been used to evaluate the evolution of an organism or classification.
+   		 \item ...
+    	  \end{itemize}
+%    	  \begin{tikzfigure}
+%    	  	\centering
+%    	  	\includegraphics[width=0.3\textwidth]{images/color}~~~~~~
+%    	  	\includegraphics[width=0.3\textwidth]{images/color}
+%    	  \end{tikzfigure}
+    	  
   }
 
 
   %% a callout block
   %% #1 - rotate angle (optional), #2 - from, #3 - where, #4 - width, #5 - text
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \calloutblock{($(box.center)+(-2,-8)$)}
-  {($(box.center)+(10,-1)$)}
-  {19cm}
-  {\small
-    Macro for creating a block node:
-    \begin{itemize}
-    \item[] \textbackslash blocknode\{Block Title\}\{Block Content\}
-    \end{itemize}
-    Macro \textbackslash blocknode has three parameters. The first one is
-    optional and it is the position of the block. The first block will be
-    automatically placed to (\$(firstrow)-(xshift)-(yshift)\$), which is the
-    left corner below the title block. In most of the templates, (firstrow) is
-    set to (title.south), where \emph{title} is the alias for the title
-    block. Each subsequent block is automatically placed to
-    [(\$(box.south)-(yshift)\$)], i.e., below the previous block aliased
-    \emph{box}.  You can also use an explicit parameter, e.g., $(-10,30)$ (note
-    that (0,0) is the center of the poster). The second parameter is the title
-    of the block. Finally, the last parameter is the  actual content. 
-  }
+  %\calloutblock{($(box.center)+(-2,-8)$)}
+  %{($(box.center)+(10,-1)$)}
+  %{19cm}
+  %{\small
+  %  Macro for creating a block node:
+  %  \begin{itemize}
+  %  \item[] \textbackslash blocknode\{Block Title\}\{Block Content\}
+  %  \end{itemize}
+  %  Macro \textbackslash blocknode has three parameters. The first one is
+  %  optional and it is the position of the block. The first block will be
+  %  automatically placed to (\$(firstrow)-(xshift)-(yshift)\$), which is the
+  %  left corner below the title block. In most of the templates, (firstrow) is
+  %  set to (title.south), where \emph{title} is the alias for the title
+  %  block. Each subsequent block is automatically placed to
+  %  [(\$(box.south)-(yshift)\$)], i.e., below the previous block aliased
+  %  \emph{box}.  You can also use an explicit parameter, e.g., $(-10,30)$ (note
+  %  that (0,0) is the center of the poster). The second parameter is the title
+  %  of the block. Finally, the last parameter is the  actual content. 
+  %}
 
 
 
@@ -217,112 +199,53 @@
   %% box is the alias of the previous block, so we can refer to its boundaries
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \blocknode{SIFT}%
-  {To make title, use the standard commands \textbackslash title and
-    \textbackslash author in the preamble, and then the following macro:
-    \begin{itemize}
-    \item[] \textbackslash titleblock\{50\}\{1.5\}
-    \end{itemize}
-    Macro \textbackslash titleblock has three parameters. The first one is
-    optional and it specifies the shift of the title block w.r.t.\ its default
-    position, which is set to (\$0.5*(0,\textbackslash
-    paperheight)-(0,\textbackslash margin)\$). The second parameter is the width
-    of the title block, and the third parameter is the scaling ratio (to make
-    the title bigger or smaller).\\
-
-    \small
-    The syntax for specifying authors is similar to the one in aaai.sty.  Author
-    information can be set in various styles: For several authors from the same
-    institution:
-    \begin{itemize}\item[] 
-      \textbackslash author\{Author 1 \textbackslash and ... \textbackslash and
-      Author n \textbackslash\textbackslash\\ 
-      Address line \textbackslash\textbackslash \
-      ... \textbackslash\textbackslash \ Address line\}
-    \end{itemize}
-
-    If the names do not fit well on one line use
-    \begin{itemize}\item[] 
-      \textbackslash author\{Author 1 \textbackslash\textbackslash \
-      \{\textbackslash bf Author 2\} \textbackslash\textbackslash \
-      ... \textbackslash\textbackslash \
-      \{\textbackslash bf Author n\} \textbackslash\textbackslash\\
-      Address line \textbackslash\textbackslash \
-      ... \textbackslash\textbackslash \ Address line\}
-    \end{itemize}
-
-    For authors from different institutions: 
-    \begin{itemize}\item[] 
-      \textbackslash author\{Author 1 \textbackslash\textbackslash \ Address
-      line \textbackslash\textbackslash \ ... \textbackslash\textbackslash \
-      Address line \\ \textbackslash And ... \textbackslash And \\
-      Author n \textbackslash\textbackslash \ Address line
-      \textbackslash\textbackslash \ ... \textbackslash\textbackslash \ Address
-      line\}
-    \end{itemize}
-    
-    To start a separate ``row'' of authors use \textbackslash AND, as in
-    \begin{itemize}\item[] 
-      \textbackslash author\{Author 1 \textbackslash\textbackslash \ Address line
-      \textbackslash\textbackslash \ ... \textbackslash\textbackslash \ Address
-      line \textbackslash AND\\ Author 2 \textbackslash\textbackslash \ Address line
-      \textbackslash\textbackslash \ ... \textbackslash\textbackslash \ Address
-      line \textbackslash And\\ Author 3 \textbackslash\textbackslash \ Address line
-      \textbackslash\textbackslash \ ... \textbackslash\textbackslash \ Address
-      line\}
-    \end{itemize}
-    (though, I must say \textbackslash and ... \textbackslash and did not work for
-    me with more than 2 authors, so just use commas where you need if it does
-    not work for you either).
+  \blocknode{Manual landmarks}%
+  {
+  	\begin{itemize}
+  		\item Morphometric landmarks are points that are a kind of points of interest,
+  		\item Landmarks are along an image outline and contain a lot of important information,
+  		\item They are defined by the biologists. 
+  	\end{itemize}
+  	\begin{tikzfigure}[The mandibles with manual landmarks]
+    	  	\centering
+    	  	\includegraphics[width=0.3\textwidth]{images/mlandmarksline}~~~~~~
+    	  	\includegraphics[width=0.3\textwidth]{images/mglandmarksline}
+    	  \end{tikzfigure}
+    	How to locate the landmarks automatically?
   }
   
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
   \blocknodew[($(currenty)-(3.5,0)$)]{30}{SIFT and landmarks} %
-  { You can also create blocks of arbitrary width
+  { SIFT\cite{•} is used to extract distinctive features from the images. 
+  It includes four steps:
     \begin{itemize}
-    \item[] \textbackslash blocknodew[coordinate]\{Block width\}\{Block Title\}%
-      \{Block Content\}
-    \end{itemize} 
-    % 
-    In this case it is better to specify coordinate manually if you want to have
-    blocks aligned vertically. \\
-
-    Note that (xshift) and (yshift) are coordinates created in macro
-    \textbackslash initializesizeandshifts, and they allow to have relative
-    positioning of block nodes in an automatic fashion. If you want to define
-    your own shifts, set new values for (xshift) and (yshift) using commands
-    \textbackslash setxshift and \textbackslash setyshift.\\
-
-    Also, it might be useful to know the y-coordinate of the south border of the
-    previous block. You can retrieve it by using the command
-    \begin{itemize}
-    \item[] \textbackslash getcurrentrow\{box\} or \textbackslash getcurrentrow\{note\}
-    \end{itemize}
-    This coordinate will be stored in (currentrow), which can be used to
-    specify the location of the next block node.
+    		\item Scale-space extrema detection
+    		\item Keypoints localization
+    		\item Orientation assigment
+    		\item Keypoint descriptor
+    \end{itemize}~\\
+    \Put(18,7){\includegraphics[scale=0.2]{images/mglandmarksline}}
+    The original SIFT outputs many candidates \\
+    for landmarks.\\
+    \textbf{\underline{Solution:}} Limiting the searching space before computing\\
+    the SIFT descriptors.  
   }
-
-
-  %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \plainblock[5]{($(currenty)+(4,2)$)}{35}{fancyTikZposter template} %
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \blocknode[($(currenty)+(3.5,0)$)]{Proposed method}
   {
-    
-    \vspace{0.3cm}
-    It is a template for scientific posters based on a0poster and TikZ
-    only. The current version contains five (plus one) different templates (see my
-    posters
-    % 
-    \href{http://www.inf.unibz.it/~ebotoeva/presentations/abcrs-KR-12-poster.pdf}{%
-      \underline{here}} and
-    % 
-    \href{http://www.inf.unibz.it/~ebotoeva/presentations/boto-RR-12-poster.pdf}{%
-      \underline{here}}). The sources of this pdf file can be found
-    \href{http://www.inf.unibz.it/~ebotoeva/tikz/tikzposter_sources.zip}{\underline{here}}.}
-
+  	sdfsdfsdfsd
+  }
   
-
-
+  
+  %\useplainblocktemplate{3}
+  %\plainblock[0]{($(currenty)+(2,0)$)}{35}{} %
+  %{
+    
+  %  abc
+  %  }
+ 
   %%%%%%%%%%%%% NEW COLUMN %%%%%%%%%%%%%%% 
   \startsecondcolumn 
 
@@ -393,54 +316,53 @@
 
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \calloutblock{($(box.south east)-(8,-2)$)}
-  {($(box.south east)-(16,2)$)}
-  {30cm}
-  {
-    There are also callout blocks that allow for a more interesting layout of the
-    poster. 
-    \begin{itemize}
-    \item[] \textbackslash calloutblock[rotate angle]\{from
-      coordinate\}\{coordinate\}\{Block Width\}\{Block Content\} 
-    \end{itemize}
-    The alias for such blocks is \emph{note}.
-  }
+  %\calloutblock{($(box.south east)-(8,-2)$)}
+  %{($(box.south east)-(16,2)$)}
+  %{30cm}
+  %{
+  % There are also callout blocks that allow for a more interesting layout of the poster. 
+  %  \begin{itemize}
+  %  \item[] \textbackslash calloutblock[rotate angle]\{from
+  %    coordinate\}\{coordinate\}\{Block Width\}\{Block Content\} 
+  %  \end{itemize}
+  %  The alias for such blocks is \emph{note}.
+  %}
 
 
   %% to place the next node centered vertically in the second column, we can
   %% obtain the y-coordinate of the previous node using macro
   %% \getcurrentrow{note}, where note is the alias of the callout node, and
   %% then specify the coordinate of the next node using coordinate (currentrow)
-  \getcurrentrow{note}
+  %\getcurrentrow{note}
 
 
   %% a plain block
   %% #1 - rotate angle (optional), #2 - where, #3 - width, #4 - title, #5 - text
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \plainblock{($(currentrow)+(xshift)-(yshift)$)}%[($(currenty)+(0,10)$)]%
-  {32}{Plain blocks} %
-  {These blocks are similar to callout blocks. They allow for specifying the
-    title of the block.
-    \begin{itemize}
-    \item[] \textbackslash plainblock[rotate angle]\{coordinate\}\{Block Width\}\{Block
-      Title\}\{Block Content\} 
-    \end{itemize}
-  }
+  %\plainblock{($(currentrow)+(xshift)-(yshift)$)}%[($(currenty)+(0,10)$)]%
+  %{32}{Plain blocks} %
+  %{These blocks are similar to callout blocks. They allow for specifying the
+  %  title of the block.
+  %  \begin{itemize}
+  %  \item[] \textbackslash plainblock[rotate angle]\{coordinate\}\{Block Width\}\{Block
+   %   Title\}\{Block Content\} 
+   % \end{itemize}
+  %}
 
 
  
   %% the coordinate (currenty) is used in the default placing of the next blocknode
- \getcurrentrow{note}
- \coordinate (currenty) at ($(currentrow)+(xshift)-(yshift)$);
+ %\getcurrentrow{note}
+ %\coordinate (currenty) at ($(currentrow)+(xshift)-(yshift)$);
 
 
 
    %%%%%%%%%%%%% NEW COLUMN %%%%%%%%%%%%%%% 
   %% (if column number is 3)
-  \startthirdcolumn
+ % \startthirdcolumn
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \blocknode {Result}%
+  \blocknode {Result}
   {It is possible to adjust the layout of the poster. To impose your own
     setting, you can use these macros:
     \begin{itemize}
@@ -520,6 +442,25 @@
     \end{itemize}
   }
 
+%%%%%%%%%% ------------------------------------------ %%%%%%%%%%
+  \blocknode%
+  {Bibliography}%
+  {To start the second column or the third column use commands
+    \begin{itemize}
+    \item[] \textbackslash startsecondcolumn, and \textbackslash startthirdcolumn.
+    \end{itemize}
+    If the number of columns is 2, then the last command will not have
+    effect. \\
+
+    You can also start a new column with an arbitrary x-coordinate by specifying
+    explicitly the coordinate of the new block node as follows:
+    \begin{itemize}
+    \item[] \textbackslash blocknode[(\$(firstrow)-(yshift)+(x,0)\$)]\{Block
+      Title\}\{Block Content\}
+    \end{itemize}
+
+    % 
+  }
 
 
 \end{tikzpicture}
