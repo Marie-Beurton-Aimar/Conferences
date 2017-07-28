@@ -216,7 +216,7 @@
   
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \blocknodew[($(currenty)-(3.5,0)$)]{30}{SIFT and landmarks} %
+  \blocknodew[($(currenty)-(3.5,0)$)]{30}{SIFT} %
   { SIFT\cite{•} is used to extract distinctive features from the images. 
   It includes four steps:
     \begin{itemize}
@@ -268,47 +268,34 @@
   
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
   \blocknode{Registration}%
-  {There are three types of colored boxes/blocks that you can use inside block
-    nodes to highlight information. \\
-    
-    \begin{tabular}[t]{ll}
-      \begin{minipage}{0.5\linewidth}
-        \innerblock{Theorem} {Statement}
-      \end{minipage}
-      & 
-      \textbackslash innerblock\{Theorem\}\{Statement\}\\
-
-      \begin{minipage}{0.5\linewidth}
-        \innerblockplain[colorone!80!]{Text}
-      \end{minipage}
-      &
-      \textbackslash innerblockplain[colorone!80!]\{Text\}\\ 
-
-      \begin{minipage}{0.5\linewidth}
-        \coloredbox{colorthree!50!}{Text}
-      \end{minipage}
-      &
-      \textbackslash coloredbox\{colorthree!50!\}\{Text\}
-    \end{tabular}
-
-    \vspace{0.5cm}
-    The default figure environment does not work within a tikzpicture. I created
-    a new figure environment that can be used instead, based on the code sent by
-    Stephan Thober.
-    \begin{itemize}
-    \item[] \textbackslash begin\{tikzfigure\}[Caption]\\
-      \ldots\\
-      \textbackslash end\{tikzfigure\}
-    \end{itemize} 
-    % 
-
-    \begin{tikzfigure}[A shaded circle]
-      \begin{tikzpicture}
-        \draw[draw=none,inner color=colorthree, outer color=colorone] (0,0) circle (2cm);
-      \end{tikzpicture}
-    \end{tikzfigure}
+  {   
+  	Two lists of contours points from segmentation step are registered 
+  	by applying Principal Component Analysis Iteration (PCAI). 
+    \begin{enumerate}
+    	\item Compute the centroid point and principal axis of contours.
+    	\item Compute the transformation values between two images.
+    	\item Register two images
+    	\item Select a subset of contour points and repeat step 1.
+    	\item PCAI stop automatically when the angle difference between two 
+    	lists of contour points is less than $1.5$ degree.
+    \end{enumerate}
   }
-
+\blocknode{SIFT and landmarks}%
+  {   
+  	\begin{tikzfigure}
+    	 \centering
+    	 \includegraphics[width=0.7\textwidth]{images/illustration}
+    \end{tikzfigure}
+    \begin{enumerate}
+    	\item A patch $P_m$ is initialized at each manual landmark of source image (size of $9\times9$),
+    	\item Calculate the SIFT descriptor for $P_m$,
+    	\item At the same position in target image, a patch $P_s$ is created (size of $36\times36$),
+    	\item For each pixel in $P_s$, a patch $P'_s$ is extracted with the same size of $P_m$,
+    	\item Calculate the SIFT descriptor for $P'_s$,
+    	\item Compute the distance between the descriptor of $P_m$ and each $P'_m$. Keep the pixel that have the minimum distance,
+    	\item The process stops when all the pixels in $P_s$ are considered.
+    \end{enumerate}
+  }
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
   %\calloutblock{($(box.south east)-(8,-2)$)}
