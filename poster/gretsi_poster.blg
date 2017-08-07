@@ -1,47 +1,56 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: gretsi_poster.aux
-I found no \bibdata command---while reading file gretsi_poster.aux
-I found no \bibstyle command---while reading file gretsi_poster.aux
-You've used 1 entry,
-            0 wiz_defined-function locations,
-            84 strings with 503 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
+The style file: plain.bst
+Illegal, another \bibstyle command---line 33 of file gretsi_poster.aux
+ : \bibstyle
+ :          {plain}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 34 of file gretsi_poster.aux
+ : \bibdata
+ :         {../references}
+I'm skipping whatever remains of this command
+Database file #1: ../references.bib
+Warning--there's a number but no volume in canny1986computational
+You've used 4 entries,
+            2118 wiz_defined-function locations,
+            523 strings with 4558 characters,
+and the built_in function-call counts, 1157 in all, are:
+= -- 111
+> -- 49
 < -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 21
+- -- 16
+* -- 79
+:= -- 207
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 19
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 5
+duplicate$ -- 44
+empty$ -- 93
+format.name$ -- 16
+if$ -- 230
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+int.to.str$ -- 4
+missing$ -- 5
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 21
+preamble$ -- 1
+purify$ -- 16
 quote$ -- 0
-skip$ -- 0
+skip$ -- 25
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 68
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
+type$ -- 14
+warning$ -- 1
+while$ -- 12
+width$ -- 5
+write$ -- 44
 (There were 2 error messages)

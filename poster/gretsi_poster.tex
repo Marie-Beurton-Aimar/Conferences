@@ -118,7 +118,6 @@
 
 
 \begin{document}
-
 %%%%% ---------- the background picture ---------- %%%%%
 %% to change it modify the macro \BackgroundPicture
 \ClearShipoutPicture
@@ -126,6 +125,9 @@
 
 \noindent % to have the picture right in the center
 \begin{tikzpicture}
+\Put(-14,80){\includegraphics[scale=1.8]{images/labri}}
+\Put(-6,80){\includegraphics[scale=1.8]{images/ubordeaux}}
+\Put(10,80){\includegraphics[scale=1.8]{images/inra}}
   \initializesizeandshifts
   % \setxshift{15}
   % \setyshift{2}
@@ -142,9 +144,9 @@
   %% a logo can be added to the title block
   %% #1 - anchor relative to the title block, #2 - shift, #3 - width, #3 - file name
   % \ifthenelse{\equal{\template}{2}}{ 
-  %   \addlogo[south west]{(2,0)}{6cm}{unibz_b.png}
+  %   \addlogo[south west]{(2,0)}{6cm}{images/color.png}
   % }{
-  %   \addlogo[south west]{(2,0)}{6cm}{unibz_w.png}
+  %   \addlogo[south west]{(2,0)}{6cm}{images/color.png}
   % }
 
 
@@ -208,16 +210,16 @@
   	\end{itemize}
   	\begin{tikzfigure}[The mandibles with manual landmarks]
     	  	\centering
-    	  	\includegraphics[width=0.3\textwidth]{images/mlandmarksline}~~~~~~
-    	  	\includegraphics[width=0.3\textwidth]{images/mglandmarksline}
+    	  	\includegraphics[scale=.27]{images/mlandmarksline}~~~~~~
+    	  	\includegraphics[scale=.27]{images/mglandmarksline}
     	  \end{tikzfigure}
     	How to locate the landmarks automatically?
   }
   
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \blocknodew[($(currenty)-(3.5,0)$)]{30}{SIFT} %
-  { SIFT\cite{•} is used to extract distinctive features from the images. 
+  \blocknode{SIFT} %
+  { SIFT\cite{lowe2004distinctive} is used to extract distinctive features from the images. 
   It includes four steps:
     \begin{itemize}
     		\item Scale-space extrema detection
@@ -225,7 +227,7 @@
     		\item Orientation assigment
     		\item Keypoint descriptor
     \end{itemize}~\\
-    \Put(18,7){\includegraphics[scale=0.2]{images/mglandmarksline}}
+    \Put(23,2){\includegraphics[scale=3.8]{images/siftc}}
     The original SIFT outputs many candidates \\
     for landmarks.\\
     \textbf{\underline{Solution:}} Limiting the searching space before computing\\
@@ -233,7 +235,7 @@
   }
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \blocknode[($(currenty)+(3.5,0)$)]{Proposed method}
+  \blocknode{Proposed method}
   {
   	\begin{tikzfigure}
     	  	\centering
@@ -248,21 +250,21 @@
     
   %  abc
   %  }
- 
-  %%%%%%%%%%%%% NEW COLUMN %%%%%%%%%%%%%%% 
-  \startsecondcolumn 
-
-  %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \blocknode%
+ \blocknode%
   {Segmentation}%
   {
     \begin{itemize}
 		\item Converting the image to binary by applying binary threshold. 
-		The threshold value is determined by analysing histogram\cite{•}.
-		\item Contours points are extracted by Canny algorithm\cite{•}.
+		The threshold value is determined by analysing histogram\cite{leestimating}.
+		\item Contours points are extracted by Canny algorithm\cite{canny1986computational}.
 		\item The threshold ratio in Canny: $T_{lower} = (1/3) \times T_{upper}$
     \end{itemize}
   }
+  %%%%%%%%%%%%% NEW COLUMN %%%%%%%%%%%%%%% 
+  \startsecondcolumn 
+
+  %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
+  
 
 
   
@@ -270,7 +272,7 @@
   \blocknode{Registration}%
   {   
   	Two lists of contours points from segmentation step are registered 
-  	by applying Principal Component Analysis Iteration (PCAI). 
+  	by applying Principal Component Analysis\cite{jolliffe2002principal} Iteration (PCAI). 
     \begin{enumerate}
     	\item Compute the centroid point and principal axis of contours.
     	\item Compute the transformation values between two images.
@@ -345,103 +347,22 @@
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
   \blocknode {Result}
-  {It is possible to adjust the layout of the poster. To impose your own
-    setting, you can use these macros:
-    \begin{itemize}
-    \item Macros for changing sizes
-      \begin{itemize}
-      \item[] \textbackslash setmargin\{4\},
-        %% the height of the head drawing on top
-        %% applicable to templates N2 and 4
-        \textbackslash setheaddrawingheight\{14\},
-        %% the space between two or more groups of authors from different
-        %% institutions
-        %% used in \maketitle
-        \textbackslash setinstituteshift\{10\},\\
-        %% the space between the blocks
-        %% default value is 2cm
-        \textbackslash setblockspacing\{2\},
-        %% the height of the title stripe in block nodes, decrease it to save space
-        %% default value is 3cm
-        \textbackslash setblocktitleheight\{3\}
-      \end{itemize}
-
-    \item Other structural macros
-      \begin{itemize}
-      \item[]  %% the number of columns in the poster, possible values 2,3
-        %% default value is 2
-        \textbackslash setcolumnnumber\{3\},
-        %% which template to use 
-        %% N1 simple, standard look, with a colored background and gray boxes
-        %% N2 board with nodes
-        %% N3 another standard look
-        %% N4 envelope like look
-        %% N5 with a wave-like head, original idea taken from
-        %%%% http://fc09.deviantart.net/fs71/f/2010/322/1/1/scientific_poster_by_nabuy-d333ria.jpg
-        %% N6 experimental, oriental style, largely based on template N3
-        \textbackslash usetemplate\{6\},\\
-        \textbackslash usecolortemplate\{4\},
-        \textbackslash usebackgroundtemplate\{5\},
-        \textbackslash usetitletemplate\{2\},\\
-        \textbackslash useblocknodetemplate\{5\},
-        \textbackslash useinnerblocktemplate\{3\},
-        \textbackslash useplainblocktemplate\{4\}
-
-      \end{itemize}
-
-    \item Macro for adding logos to the title block
-      \begin{itemize}
-      \item[] \textbackslash addlogo[south west]\{(0,0)\}\{6cm\}\{filename\}
-      \end{itemize}
-
-    \item Macros for the basic colors
-      \begin{itemize}
-      \item[] \textbackslash setfirstcolor\{green!70!\}, % default 116699
-        \textbackslash setsecondcolor\{gray!80!\}, % default CCCCCC
-        \textbackslash setthirdcolor\{red!80!black\}% default 991111
-      \end{itemize}
-
-    \item Macros for specific colors:
-      \begin{itemize}
-      \item[] \textbackslash setbackgrounddarkcolor\{colorone!70!black\},
-        \textbackslash setbackgroundlightcolor\{{\small colorone!70!}\},\\
-        \textbackslash settitletextcolor\{textcolor\},
-        \textbackslash settitlefillcolor\{white\},
-        \textbackslash settitledrawcolor\{colortwo\},\\
-        \textbackslash setblocktextcolor\{textcolor\},
-        \textbackslash setblockfillcolor\{white\},\\
-        \textbackslash setblocktitletextcolor\{colorone\},
-        \textbackslash setblocktitlefillcolor\{colortwo\}, \\
-        \textbackslash setplainblocktextcolor\{textcolor\},
-        \textbackslash setplainblockfillcolor\{colorthree!40\},\\
-        \textbackslash setplainblocktitletextcolor\{textcolor\},
-        \textbackslash setplainblocktitlefillcolor\{colorthree!60\}, \\
-        \textbackslash setinnerblocktextcolor\{textcolor\},
-        \textbackslash setinnerblockfillcolor\{white\},\\
-        \textbackslash setinnerblocktitletextcolor\{white\},
-        \textbackslash setinnerblocktitlefillcolor\{colorthree\},
-      \end{itemize}
-    \end{itemize}
+  {
+  	\begin{tikzfigure}[The mandibles with manual landmarks]
+    	\centering
+    	\includegraphics[scale=1.5]{images/md_rs}~~
+    	\includegraphics[scale=.6]{images/md_chartlms}\\[0.2cm]
+    	\includegraphics[scale=1.5]{images/mg_rs}~~
+    	\includegraphics[scale=.7]{images/mg_chartlms}
+    \end{tikzfigure}
   }
 
 %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
   \blocknode%
   {Bibliography}%
-  {To start the second column or the third column use commands
-    \begin{itemize}
-    \item[] \textbackslash startsecondcolumn, and \textbackslash startthirdcolumn.
-    \end{itemize}
-    If the number of columns is 2, then the last command will not have
-    effect. \\
-
-    You can also start a new column with an arbitrary x-coordinate by specifying
-    explicitly the coordinate of the new block node as follows:
-    \begin{itemize}
-    \item[] \textbackslash blocknode[(\$(firstrow)-(yshift)+(x,0)\$)]\{Block
-      Title\}\{Block Content\}
-    \end{itemize}
-
-    % 
+  {
+   \bibliographystyle{plain}
+	\bibliography{../references}
   }
 
 
