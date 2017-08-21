@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.25)  7 AUG 2017 22:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.25)  21 AUG 2017 21:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1026,14 +1026,14 @@ File: images/mlandmarksline.png Graphic file (type png)
 
 <use images/mlandmarksline.png>
 Package pdftex.def Info: images/mlandmarksline.png used on input line 217.
-(pdftex.def)             Requested size: 239.03621pt x 394.53172pt.
+(pdftex.def)             Requested size: 247.8844pt x 409.13576pt.
 
 <images/mglandmarksline.png, id=44, 884.55469pt x 1460.45625pt>
 File: images/mglandmarksline.png Graphic file (type png)
 
 <use images/mglandmarksline.png>
 Package pdftex.def Info: images/mglandmarksline.png used on input line 217.
-(pdftex.def)             Requested size: 238.83296pt x 394.32846pt.
+(pdftex.def)             Requested size: 247.67363pt x 408.92497pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 217--217
 
@@ -1042,11 +1042,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--217
 File: images/mlandmarksline.png Graphic file (type png)
 <use images/mlandmarksline.png>
 Package pdftex.def Info: images/mlandmarksline.png used on input line 217.
-(pdftex.def)             Requested size: 239.03621pt x 394.53172pt.
+(pdftex.def)             Requested size: 247.8844pt x 409.13576pt.
 File: images/mglandmarksline.png Graphic file (type png)
  <use images/mglandmarksline.png>
 Package pdftex.def Info: images/mglandmarksline.png used on input line 217.
-(pdftex.def)             Requested size: 238.83296pt x 394.32846pt.
+(pdftex.def)             Requested size: 247.67363pt x 408.92497pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 235--235
 
@@ -1241,11 +1241,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 372.
  ) 
 Here is how much of TeX's memory you used:
- 21147 strings out of 494883
- 423623 string characters out of 6178693
- 585187 words of memory out of 5000000
- 23993 multiletter control sequences out of 15000+600000
- 65091 words of font info for 64 fonts, out of 8000000 for 9000
+ 21146 strings out of 494883
+ 423604 string characters out of 6178693
+ 585170 words of memory out of 5000000
+ 23992 multiletter control sequences out of 15000+600000
+ 61961 words of font info for 63 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  62i,17n,84p,438b,805s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/kurier/ec-kurier.enc}{/usr/sha
@@ -1256,7 +1256,7 @@ enc/dvips/kurier/rm-kurier.enc}</usr/share/texlive/texmf-dist/fonts/type1/nowac
 ki/kurier/kurierb.pfb></usr/share/texlive/texmf-dist/fonts/type1/nowacki/kurier
 /kurierr.pfb></usr/share/texlive/texmf-dist/fonts/type1/nowacki/kurier/kurierri
 .pfb>
-Output written on gretsi_poster.pdf (1 page, 686247 bytes).
+Output written on gretsi_poster.pdf (1 page, 686216 bytes).
 PDF statistics:
  225 PDF objects out of 1000 (max. 8388607)
  132 compressed objects within 2 object streams
