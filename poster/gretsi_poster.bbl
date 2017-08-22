@@ -1,24 +1,29 @@
 \begin{thebibliography}{1}
 
 \bibitem{canny1986computational}
-John Canny.
+J.~Canny.
 \newblock A computational approach to edge detection.
 \newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
   on}, (6):679--698, 1986.
 
 \bibitem{jolliffe2002principal}
-Ian Jolliffe.
+I.~Jolliffe.
 \newblock {\em Principal component analysis}.
 \newblock Wiley Online Library, 2002.
 
 \bibitem{leestimating}
-L~L{\^e}~V{\~a}nh, M~Beurton-Aimar, JP~Salmon, A~Marie, and N~Parisey.
+L.~L{\^e}~V{\~a}nh, M.~Beurton-Aimar, J.~Salmon, A.~Marie, and N.~Parisey.
 \newblock Estimating landmarks on 2d images of beetle mandibles.
 \newblock {\em WSCG}, 2016.
 
 \bibitem{lowe2004distinctive}
-David~G Lowe.
+D.~G. Lowe.
 \newblock Distinctive image features from scale-invariant keypoints.
 \newblock {\em International journal of computer vision}, 60(2):91--110, 2004.
+
+\bibitem{shlens2014tutorial}
+J.~Shlens.
+\newblock A tutorial on principal component analysis.
+\newblock {\em arXiv preprint arXiv:1404.1100}, 2014.
 
 \end{thebibliography}

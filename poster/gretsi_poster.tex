@@ -158,8 +158,8 @@
   {
 	  \begin{itemize}
    		 \item Morphometry analysis is a way to characterize the shape variations of the organisms,
-   		 \item Morphometric characteristics have been used to evaluate the evolution of an organism or classification.
-   		 \item ...
+   		 \item Morphometric characteristics have been used to evaluate the evolution of an organism, by finding new or sharpening the definition of old,
+   		 \item Morphometrics are also used to classify the objects to different groups in a family.
     	  \end{itemize}
 %    	  \begin{tikzfigure}
 %    	  	\centering
@@ -271,13 +271,14 @@
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
   \blocknode{Registration}%
   {   
-  	Two lists of contours points from segmentation step are registered 
-  	by applying Principal Component Analysis\cite{jolliffe2002principal} Iteration (PCAI). 
+  	Two lists of contour points from segmentation step are registered 
+  	by applying Principal Component Analysis\cite{jolliffe2002principal, shlens2014tutorial} Iteration (PCAI).
     \begin{enumerate}
-    	\item Compute the centroid point and principal axis of contours.
-    	\item Compute the transformation values between two images.
-    	\item Register two images
-    	\item Select a subset of contour points and repeat step 1.
+    	\item Compute the centroid point and principal axis of contours,
+    	\item Compute the transformation values between two lists of contour points,
+    	\item Register two images,
+    	\item Sort the contour points followed y-direction,
+    	\item Select a subset of contour points and repeat step 1,
     	\item PCAI stop automatically when the angle difference between two 
     	lists of contour points is less than $1.5$ degree.
     \end{enumerate}
@@ -294,8 +295,8 @@
     	\item At the same position in target image, a patch $P_s$ is created (size of $36\times36$),
     	\item For each pixel in $P_s$, a patch $P'_s$ is extracted with the same size of $P_m$,
     	\item Calculate the SIFT descriptor for $P'_s$,
-    	\item Compute the distance between the descriptor of $P_m$ and each $P'_m$. Keep the pixel that have the minimum distance,
-    	\item The process stops when all the pixels in $P_s$ are considered.
+    	\item Compute the distance between the descriptor of $P_m$ and each $P'_m$,
+    	\item The process stops when all the pixels in $P_s$ are considered. Keep the pixel that has the minimum distance with $P_m$.
     \end{enumerate}
   }
 
@@ -361,7 +362,9 @@
   \blocknode%
   {Bibliography}%
   {
-   \bibliographystyle{plain}
+  \renewcommand{\refname}{\vskip -3.45cm}
+   \bibliographystyle{abbrv}
+%   \renewcommand{\bibname}{}
 	\bibliography{../references}
   }
 
