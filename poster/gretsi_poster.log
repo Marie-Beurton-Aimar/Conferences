@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.23)  22 AUG 2017 10:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.23)  24 AUG 2017 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -976,57 +976,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--170
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--217
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 
  []
 
-<images/mlandmarksline.png, id=36, 885.3075pt x 1461.20906pt>
+<images/mlandmarksline.png, id=36, 602.25pt x 752.8125pt>
 File: images/mlandmarksline.png Graphic file (type png)
 
 <use images/mlandmarksline.png>
-Package pdftex.def Info: images/mlandmarksline.png used on input line 217.
-(pdftex.def)             Requested size: 247.8844pt x 409.13576pt.
+Package pdftex.def Info: images/mlandmarksline.png used on input line 219.
+(pdftex.def)             Requested size: 180.67639pt x 225.84549pt.
 
-<images/mglandmarksline.png, id=38, 884.55469pt x 1460.45625pt>
+<images/mglandmarksline.png, id=38, 602.25pt x 752.8125pt>
 File: images/mglandmarksline.png Graphic file (type png)
 
 <use images/mglandmarksline.png>
-Package pdftex.def Info: images/mglandmarksline.png used on input line 217.
-(pdftex.def)             Requested size: 247.67363pt x 408.92497pt.
+Package pdftex.def Info: images/mglandmarksline.png used on input line 219.
+(pdftex.def)             Requested size: 180.67639pt x 225.84549pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--217
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 
  []
 
 File: images/mlandmarksline.png Graphic file (type png)
 <use images/mlandmarksline.png>
-Package pdftex.def Info: images/mlandmarksline.png used on input line 217.
-(pdftex.def)             Requested size: 247.8844pt x 409.13576pt.
+Package pdftex.def Info: images/mlandmarksline.png used on input line 219.
+(pdftex.def)             Requested size: 180.67639pt x 225.84549pt.
 File: images/mglandmarksline.png Graphic file (type png)
  <use images/mglandmarksline.png>
-Package pdftex.def Info: images/mglandmarksline.png used on input line 217.
-(pdftex.def)             Requested size: 247.67363pt x 408.92497pt.
+Package pdftex.def Info: images/mglandmarksline.png used on input line 219.
+(pdftex.def)             Requested size: 180.67639pt x 225.84549pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--235
+Underfull \hbox (badness 10000) in paragraph at lines 239--239
 
  []
 
 <images/siftc.jpg, id=46, 75.28125pt x 67.75313pt>
 File: images/siftc.jpg Graphic file (type jpg)
  <use images/siftc.jpg>
-Package pdftex.def Info: images/siftc.jpg used on input line 235.
+Package pdftex.def Info: images/siftc.jpg used on input line 239.
 (pdftex.def)             Requested size: 286.06822pt x 257.4614pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--235
+Underfull \hbox (badness 10000) in paragraph at lines 239--239
 
  []
 
 File: images/siftc.jpg Graphic file (type jpg)
 <use images/siftc.jpg>
-Package pdftex.def Info: images/siftc.jpg used on input line 235.
+Package pdftex.def Info: images/siftc.jpg used on input line 239.
 (pdftex.def)             Requested size: 286.06822pt x 257.4614pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--244
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 
  []
 
@@ -1034,39 +1034,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 244--244
 File: images/method2.png Graphic file (type png)
 
 <use images/method2.png>
-Package pdftex.def Info: images/method2.png used on input line 244.
-(pdftex.def)             Requested size: 897.53625pt x 520.41945pt.
+Package pdftex.def Info: images/method2.png used on input line 263.
+(pdftex.def)             Requested size: 606.7654pt x 351.8135pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--244
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 
  []
 
 File: images/method2.png Graphic file (type png)
 <use images/method2.png>
-Package pdftex.def Info: images/method2.png used on input line 244.
-(pdftex.def)             Requested size: 897.53625pt x 520.41945pt.
+Package pdftex.def Info: images/method2.png used on input line 263.
+(pdftex.def)             Requested size: 606.7654pt x 351.8135pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
+Underfull \hbox (badness 10000) in paragraph at lines 279--279
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--285
+Underfull \hbox (badness 10000) in paragraph at lines 279--279
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--285
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--301
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
 
  []
 
@@ -1074,81 +1074,89 @@ Underfull \hbox (badness 10000) in paragraph at lines 301--301
 File: images/illustration.png Graphic file (type png)
 
 <use images/illustration.png>
-Package pdftex.def Info: images/illustration.png used on input line 301.
+Package pdftex.def Info: images/illustration.png used on input line 318.
 (pdftex.def)             Requested size: 698.08543pt x 273.40187pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--301
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
 
  []
 
 File: images/illustration.png Graphic file (type png)
 <use images/illustration.png>
-Package pdftex.def Info: images/illustration.png used on input line 301.
+Package pdftex.def Info: images/illustration.png used on input line 318.
 (pdftex.def)             Requested size: 698.08543pt x 273.40187pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--359
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
 
  []
 
 <images/md_rs.png, id=88, 150.5625pt x 225.84375pt>
 File: images/md_rs.png Graphic file (type png)
  <use images/md_rs.png>
-Package pdftex.def Info: images/md_rs.png used on input line 359.
-(pdftex.def)             Requested size: 225.84317pt x 338.76477pt.
+Package pdftex.def Info: images/md_rs.png used on input line 378.
+(pdftex.def)             Requested size: 255.95514pt x 383.93272pt.
 
 <images/md_chartlms.jpg, id=89, 892.33376pt x 545.03625pt>
 File: images/md_chartlms.jpg Graphic file (type jpg)
 
 <use images/md_chartlms.jpg>
-Package pdftex.def Info: images/md_chartlms.jpg used on input line 359.
-(pdftex.def)             Requested size: 535.40439pt x 327.02428pt.
+Package pdftex.def Info: images/md_chartlms.jpg used on input line 378.
+(pdftex.def)             Requested size: 713.86798pt x 436.0296pt.
 
-<images/mg_rs.png, id=90, 150.5625pt x 225.84375pt>
-File: images/mg_rs.png Graphic file (type png)
- <use images/mg_rs.png>
-Package pdftex.def Info: images/mg_rs.png used on input line 359.
-(pdftex.def)             Requested size: 225.84317pt x 338.76477pt.
-
-<images/mg_chartlms.jpg, id=91, 731.73375pt x 508.90125pt>
-File: images/mg_chartlms.jpg Graphic file (type jpg)
-
-<use images/mg_chartlms.jpg>
-Package pdftex.def Info: images/mg_chartlms.jpg used on input line 359.
-(pdftex.def)             Requested size: 512.21013pt x 356.22844pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 359--359
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
 
  []
 
 File: images/md_rs.png Graphic file (type png)
 <use images/md_rs.png>
-Package pdftex.def Info: images/md_rs.png used on input line 359.
-(pdftex.def)             Requested size: 225.84317pt x 338.76477pt.
+Package pdftex.def Info: images/md_rs.png used on input line 378.
+(pdftex.def)             Requested size: 255.95514pt x 383.93272pt.
 File: images/md_chartlms.jpg Graphic file (type jpg)
  <use images/md_chartlms.jpg>
-Package pdftex.def Info: images/md_chartlms.jpg used on input line 359.
-(pdftex.def)             Requested size: 535.40439pt x 327.02428pt.
+Package pdftex.def Info: images/md_chartlms.jpg used on input line 378.
+(pdftex.def)             Requested size: 713.86798pt x 436.0296pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+
+ []
+
+<images/mg_rs.png, id=96, 150.5625pt x 225.84375pt>
 File: images/mg_rs.png Graphic file (type png)
  <use images/mg_rs.png>
-Package pdftex.def Info: images/mg_rs.png used on input line 359.
-(pdftex.def)             Requested size: 225.84317pt x 338.76477pt.
+Package pdftex.def Info: images/mg_rs.png used on input line 391.
+(pdftex.def)             Requested size: 255.95514pt x 383.93272pt.
+
+<images/mg_chartlms.jpg, id=97, 731.73375pt x 508.90125pt>
 File: images/mg_chartlms.jpg Graphic file (type jpg)
 
 <use images/mg_chartlms.jpg>
-Package pdftex.def Info: images/mg_chartlms.jpg used on input line 359.
-(pdftex.def)             Requested size: 512.21013pt x 356.22844pt.
+Package pdftex.def Info: images/mg_chartlms.jpg used on input line 391.
+(pdftex.def)             Requested size: 574.41226pt x 399.48836pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--369
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+
+ []
+
+File: images/mg_rs.png Graphic file (type png)
+<use images/mg_rs.png>
+Package pdftex.def Info: images/mg_rs.png used on input line 391.
+(pdftex.def)             Requested size: 255.95514pt x 383.93272pt.
+File: images/mg_chartlms.jpg Graphic file (type jpg)
+ <use images/mg_chartlms.jpg>
+Package pdftex.def Info: images/mg_chartlms.jpg used on input line 391.
+(pdftex.def)             Requested size: 574.41226pt x 399.48836pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--400
 
  []
 
 (./gretsi_poster.bbl)
-Underfull \hbox (badness 10000) in paragraph at lines 369--369
+Underfull \hbox (badness 10000) in paragraph at lines 400--400
 
  []
 
 (./gretsi_poster.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 375.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 406.
 
 Overfull \hbox (65.29169pt too wide) has occurred while \output is active
  [][] 
@@ -1164,51 +1172,51 @@ putational}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.375 \end{document}
+l.406 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.jolliffe2002principal}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.375 \end{document}
+l.406 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.leestimating}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.375 \end{document}
+l.406 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.lowe2004distinctive}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.375 \end{document}
+l.406 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.shlens2014tutorial}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.375 \end{document}
+l.406 \end{document}
                      <./images/labri.png> <./images/ubordeaux.jpg> <./images/in
 ra.png> <./images/mlandmarksline.png> <./images/mglandmarksline.png> <./images/
 siftc.jpg> <./images/method2.png> <./images/illustration.png> <./images/md_rs.p
 ng> <./images/md_chartlms.jpg> <./images/mg_rs.png> <./images/mg_chartlms.jpg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 375.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 406.
 (./gretsi_poster.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 375.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 375.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 406.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 406.
 Package rerunfilecheck Info: File `gretsi_poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 375.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 406.
  ) 
 Here is how much of TeX's memory you used:
- 19366 strings out of 493304
- 369747 string characters out of 6139871
- 556707 words of memory out of 5000000
+ 19368 strings out of 493304
+ 369745 string characters out of 6139871
+ 569707 words of memory out of 5000000
  22380 multiletter control sequences out of 15000+600000
  61961 words of font info for 63 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -1221,10 +1229,10 @@ er/rm-kurier.enc}</usr/share/texlive/texmf-dist/fonts/type1/nowacki/kurier/kuri
 erb.pfb></usr/share/texlive/texmf-dist/fonts/type1/nowacki/kurier/kurierr.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/nowacki/kurier/kurierri.pfb></usr/sha
 re/texmf/fonts/type1/public/cm-super/sfbtl10.pfb>
-Output written on gretsi_poster.pdf (1 page, 771792 bytes).
+Output written on gretsi_poster.pdf (1 page, 683168 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 355 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 213 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 500000)
+ 373 words of extra memory for PDF output out of 10000 (max. 10000000)
 

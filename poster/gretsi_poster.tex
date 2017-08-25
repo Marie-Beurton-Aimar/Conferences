@@ -158,8 +158,8 @@
   {
 	  \begin{itemize}
    		 \item Morphometry analysis is a way to characterize the shape variations of the organisms,
-   		 \item Morphometric characteristics have been used to evaluate the evolution of an organism, by finding new or sharpening the definition of old,
-   		 \item Morphometrics are also used to classify the objects to different groups in a family.
+   		 \item Morphometric characteristics have been used to evaluate the evolution of an organism, by finding new or sharpening definition of old one,
+   		 \item Morphometrics are also used to classify the objects in different groups.
     	  \end{itemize}
 %    	  \begin{tikzfigure}
 %    	  	\centering
@@ -204,43 +204,62 @@
   \blocknode{Manual landmarks}%
   {
   	\begin{itemize}
-  		\item Morphometric landmarks are points that are a kind of points of interest,
-  		\item Landmarks are along an image outline and contain a lot of important information,
-  		\item They are defined by the biologists. 
+  		\item Morphometric landmarks are points of interest in the biological object,
+  		\item Landmarks characterize specificities through the shape \\ most often linked to biological information,
+  		\item They are usually defined by biologists manually. 
+  		\item Images show manual landmarks in beetle mandibles \\ belonging to our sample. How to \textcolor{red}{locate} the landmarks \\ \textcolor{red}{\textbf{automatically}}?
   	\end{itemize}
-  	\begin{tikzfigure}[]
-    	  	\centering
-    	  	\includegraphics[scale=.28]{images/mlandmarksline}~~~~~~
-    	  	\includegraphics[scale=.28]{images/mglandmarksline}
-    	  \end{tikzfigure}
-    	How to \textcolor{red}{locate} the landmarks \textcolor{red}{\textbf{automatically}}?
+  	 %\begin{tikzfigure}[]
+    	 % 	\centering
+    	 %	\includegraphics[scale=.28]{images/mlandmarksline}~~~~~~
+    	 % 	\includegraphics[scale=.28]{images/mglandmarksline}
+    	 % \end{tikzfigure}
+    \Put(23,9){\includegraphics[scale=.3]{images/mlandmarksline}}
+    \Put(29,9){\includegraphics[scale=.3]{images/mglandmarksline}}
   }
   
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
   \blocknode{SIFT} %
-  { SIFT\cite{lowe2004distinctive} is used to extract distinctive features from the images. 
+  {
+  	\begin{itemize}
+  		\item SIFT\cite{lowe2004distinctive} is used to extract distinctive features from the images. 
   It includes four steps:
-    \begin{itemize}
-    		\item Scale-space extrema detection
-    		\item Keypoints localization
-    		\item Orientation assigment
-    		\item Keypoint descriptor
-    \end{itemize}~\\
-    \Put(23,2){\includegraphics[scale=3.8]{images/siftc}}
-    The original SIFT outputs many candidates \\
-    for landmarks.\\
-    \textbf{\underline{Solution:}} Limiting the searching space before computing\\
+	    \begin{itemize}
+    			\item Scale-space extrema detection
+    			\item Keypoints localization
+    			\item Orientation assigment
+    			\item Keypoint descriptor
+    		\end{itemize}
+    		\item \textbf{\underline{Limitation:}} The obtained results from original SIFT method \\ set many landamark candidates.
+	    \item \textbf{\underline{Solution:}} Reducing the searching space before computing\\
     the SIFT descriptors.  
+    \end{itemize} 
+    \Put(25,12){\includegraphics[scale=3.8]{images/siftc}}
   }
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \blocknode{Proposed method}
   {
-  	\begin{tikzfigure}
-    	  	\centering
-    	  	\includegraphics[width=0.9\textwidth]{images/method2}
-    	  \end{tikzfigure}
+  	\begin{itemize}
+  		\item \textbf{\underline{Input:}} 
+		\begin{itemize}
+			\item Model image
+			\item Model manual landmarks
+			\item Scene image
+		\end{itemize}		  		
+  		\item \textbf{\underline{Output:}} landmarks of scene image
+  		\item \textbf{\underline{Steps:}}
+  		\begin{itemize}
+  			\item Shape identification \\(segmentation and registration)
+  			\item SIFT and landmarks
+  		\end{itemize}
+  	\end{itemize}
+  	%\begin{tikzfigure}
+    	%  	\centering
+    	%  	\includegraphics[scale=.5]{images/method2}
+    	%  \end{tikzfigure}
+    \Put(14.4,11){\includegraphics[scale=.5]{images/method2}}
   }
   
   
@@ -253,12 +272,23 @@
  \blocknode%
   {Segmentation}%
   {
-    \begin{itemize}
-		\item Converting the image to binary by applying binary threshold. 
-		The threshold value is determined by analysing histogram\cite{leestimating}.
-		\item Contours points are extracted by Canny algorithm\cite{canny1986computational}.
-		\item The threshold ratio in Canny: $T_{lower} = (1/3) \times T_{upper}$
-    \end{itemize}
+    \begin{enumerate}
+		\item Converting the image to binary one by applying a threshold determined by histogram analysis\cite{leestimating}.
+		\item Contours points are extracted by Canny algorithm\cite{canny1986computational}. The thresholds ratio in Canny: $T_{lower} = (1/3) \times T_{upper}$, in which $T_{lower}$ equals to the threshold value in step 1.
+    \end{enumerate}
+  }
+  
+  \blocknode{Registration}%
+  {   Model and scene image are segmented to extract the contours points. The contours points are registered by applying Principal Component Analysis\cite{jolliffe2002principal, shlens2014tutorial} Iteration (PCAI).
+    \begin{enumerate}
+    	\item Compute the centroid point and principal axis of each list of contour point,
+    	\item Compute the transformation values between two lists of contour points,
+    	\item Register two lists of contour points,
+    	\item Sort the contour points of scene image followed y-direction,
+    	\item Select a subset of contour points of scene image and repeat step 1,
+    	\item PCAI stop automatically when the angle difference between two 
+    	lists of contour points is less than $1.5$ degree.
+    \end{enumerate}
   }
   %%%%%%%%%%%%% NEW COLUMN %%%%%%%%%%%%%%% 
   \startsecondcolumn 
@@ -269,20 +299,7 @@
 
   
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \blocknode{Registration}%
-  {   
-  	Two lists of contour points from segmentation step are registered 
-  	by applying Principal Component Analysis\cite{jolliffe2002principal, shlens2014tutorial} Iteration (PCAI).
-    \begin{enumerate}
-    	\item Compute the centroid point and principal axis of contours,
-    	\item Compute the transformation values between two lists of contour points,
-    	\item Register two images,
-    	\item Sort the contour points followed y-direction,
-    	\item Select a subset of contour points and repeat step 1,
-    	\item PCAI stop automatically when the angle difference between two 
-    	lists of contour points is less than $1.5$ degree.
-    \end{enumerate}
-  }
+  
 \blocknode{SIFT and landmarks}%
   {   
   	\begin{tikzfigure}
@@ -290,13 +307,13 @@
     	 \includegraphics[width=0.7\textwidth]{images/illustration}
     \end{tikzfigure}
     \begin{enumerate}
-    	\item A patch $P_m$ is initialized at each manual landmark of source image (size of $9\times9$),
+    	\item A patch $P_m$ is initialized at each manual landmark of model image (size of $9\times9$),
     	\item Calculate the SIFT descriptor for $P_m$,
-    	\item At the same position in target image, a patch $P_s$ is created (size of $36\times36$),
+    	\item At the same position in the scene image, a patch $P_s$ is created (size of $36\times36$),
     	\item For each pixel in $P_s$, a patch $P'_s$ is extracted with the same size of $P_m$,
-    	\item Calculate the SIFT descriptor for $P'_s$,
+    	\item Calculate the SIFT descriptor for all $P'_s$,
     	\item Compute the distance between the descriptor of $P_m$ and each $P'_m$,
-    	\item The process stops when all the pixels in $P_s$ are considered. Keep the pixel that has the minimum distance with $P_m$.
+    	\item At the end, the pixel that has the minimum distance with $P_m$ is kept.
     \end{enumerate}
   }
 
@@ -347,17 +364,31 @@
  % \startthirdcolumn
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \blocknode {Results on left and right mandibles}
+  \blocknode {Results on right mandibles}
   {
+  	\begin{itemize}
+  		\item Highest accuracy: $1^{st}$ landmark with $98.62\%$
+  		\item Lowest accuracy: $13^{th}, 14^{th}$ landmark with app. $75\%$
+  	\end{itemize}
   	\begin{tikzfigure}[]
     	\centering
-    	\includegraphics[scale=1.5]{images/md_rs}~~
-    	\includegraphics[scale=.6]{images/md_chartlms}\\[0.2cm]
-    	\includegraphics[scale=1.5]{images/mg_rs}~~
-    	\includegraphics[scale=.7]{images/mg_chartlms}
+    	\includegraphics[scale=1.7]{images/md_rs}~~
+    	\includegraphics[scale=.8]{images/md_chartlms}
     \end{tikzfigure}
   }
 
+\blocknode {Results on left mandibles}
+  {
+  \begin{itemize}
+  		\item Highest accuracy: $1^{st}$ landmark with $93.01\%$
+  		\item Lowest accuracy: $11^{th}, 12^{th}$ and $16^{th}$ landmark from  $60\%$ to app. $63\%$
+  	\end{itemize}
+  	\begin{tikzfigure}[]
+    	\centering
+    	\includegraphics[scale=1.7]{images/mg_rs}~~
+    	\includegraphics[scale=.785]{images/mg_chartlms}
+    \end{tikzfigure}
+  }
 %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
   \blocknode%
   {Bibliography}%
