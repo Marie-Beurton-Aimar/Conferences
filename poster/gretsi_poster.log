@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.23)  24 AUG 2017 16:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.23)  28 AUG 2017 14:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -798,6 +798,66 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip51
 )
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks33
+\XKV@tempa@toks=\toks34
+\XKV@depth=\count149
+File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
+
+(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box60
+)
+\tc@llx=\dimen185
+\tc@lly=\dimen186
+\tc@urx=\dimen187
+\tc@ury=\dimen188
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen189
+\adjbox@Height=\dimen190
+\adjbox@Depth=\dimen191
+\adjbox@Totalheight=\dimen192
+
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2011/09/13 v1.0 Conditionals for odd/even page detection
+\c@checkoddpage=\count150
+)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box61
+\sift@deathcycles=\count151
+\@vwid@loff=\dimen193
+\@vwid@roff=\dimen194
+))
 (./gretsi_poster.aux
 
 LaTeX Warning: Label `canny1986computational' multiply defined.
@@ -811,40 +871,37 @@ LaTeX Warning: Label `leestimating' multiply defined.
 
 LaTeX Warning: Label `lowe2004distinctive' multiply defined.
 
-
-LaTeX Warning: Label `shlens2014tutorial' multiply defined.
-
 )
 \openout1 = `gretsi_poster.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
  ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count149
-\scratchdimen=\dimen185
-\scratchbox=\box60
-\nofMPsegments=\count150
-\nofMParguments=\count151
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count152
-\MPscratchDim=\dimen186
-\MPnumerator=\count153
-\makeMPintoPDFobject=\count154
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count152
+\scratchdimen=\dimen195
+\scratchbox=\box62
+\nofMPsegments=\count153
+\nofMParguments=\count154
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count155
+\MPscratchDim=\dimen196
+\MPnumerator=\count156
+\makeMPintoPDFobject=\count157
+\everyMPtoPDFconversion=\toks36
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -860,7 +917,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box61
+\AtBeginShipoutBox=\box63
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -901,18 +958,18 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 120.
+Package hyperref Info: Link coloring OFF on input line 122.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count155
+\c@section@level=\count158
 )
-LaTeX Info: Redefining \ref on input line 120.
-LaTeX Info: Redefining \pageref on input line 120.
-LaTeX Info: Redefining \nameref on input line 120.
+LaTeX Info: Redefining \ref on input line 122.
+LaTeX Info: Redefining \pageref on input line 122.
+LaTeX Info: Redefining \nameref on input line 122.
 
 (./gretsi_poster.out) (./gretsi_poster.out)
 \@outlinefile=\write5
@@ -922,61 +979,61 @@ LaTeX Info: Redefining \nameref on input line 120.
 <images/labri.png, id=23, 81.30376pt x 80.3pt>
 File: images/labri.png Graphic file (type png)
  <use images/labri.png>
-Package pdftex.def Info: images/labri.png used on input line 128.
+Package pdftex.def Info: images/labri.png used on input line 130.
 (pdftex.def)             Requested size: 146.34662pt x 144.53986pt.
 
 <images/ubordeaux.jpg, id=24, 200.75pt x 80.3pt>
 File: images/ubordeaux.jpg Graphic file (type jpg)
  <use images/ubordeaux.jpg>
-Package pdftex.def Info: images/ubordeaux.jpg used on input line 129.
+Package pdftex.def Info: images/ubordeaux.jpg used on input line 131.
 (pdftex.def)             Requested size: 361.3497pt x 144.53986pt.
 
 <images/inra.png, id=25, 214.8025pt x 80.3pt>
 File: images/inra.png Graphic file (type png)
  <use images/inra.png>
-Package pdftex.def Info: images/inra.png used on input line 130.
+Package pdftex.def Info: images/inra.png used on input line 132.
 (pdftex.def)             Requested size: 386.6442pt x 144.53986pt.
 LaTeX Font Info:    Try loading font information for OT1+kurierm on input line 
-142.
+144.
 
 (/usr/share/texlive/texmf-dist/tex/latex/kurier/ot1kurierm.fd
 File: ot1kurierm.fd 2005/10/03 v1.2 font definition file for OT1/kurierm (MW)
 )
 LaTeX Font Info:    Try loading font information for OML+kurier on input line 1
-42.
+44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/kurier/omlkurier.fd
 File: omlkurier.fd 2008/07/22 v0.995 font definition file for OML/kurier (MW)
 )
 LaTeX Font Info:    Try loading font information for OMS+kurier on input line 1
-42.
+44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/kurier/omskurier.fd
 File: omskurier.fd 2008/07/22 v0.995 font definition file for OMS/kurier (MW)
 )
 LaTeX Font Info:    Try loading font information for OMX+kurier on input line 1
-42.
+44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/kurier/omxkurier.fd
 File: omxkurier.fd 2008/07/22 v0.995 font definition file for OMX/kurier (MW)
 )
-LaTeX Font Info:    Try loading font information for T1+cmtl on input line 142.
+LaTeX Font Info:    Try loading font information for T1+cmtl on input line 144.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/cmbright/t1cmtl.fd
 File: t1cmtl.fd 2005/04/13 v8.1 (WaS)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 222--222
 
  []
 
@@ -984,49 +1041,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 219--219
 File: images/mlandmarksline.png Graphic file (type png)
 
 <use images/mlandmarksline.png>
-Package pdftex.def Info: images/mlandmarksline.png used on input line 219.
+Package pdftex.def Info: images/mlandmarksline.png used on input line 222.
 (pdftex.def)             Requested size: 180.67639pt x 225.84549pt.
 
 <images/mglandmarksline.png, id=38, 602.25pt x 752.8125pt>
 File: images/mglandmarksline.png Graphic file (type png)
 
 <use images/mglandmarksline.png>
-Package pdftex.def Info: images/mglandmarksline.png used on input line 219.
+Package pdftex.def Info: images/mglandmarksline.png used on input line 222.
 (pdftex.def)             Requested size: 180.67639pt x 225.84549pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 222--222
 
  []
 
 File: images/mlandmarksline.png Graphic file (type png)
 <use images/mlandmarksline.png>
-Package pdftex.def Info: images/mlandmarksline.png used on input line 219.
+Package pdftex.def Info: images/mlandmarksline.png used on input line 222.
 (pdftex.def)             Requested size: 180.67639pt x 225.84549pt.
 File: images/mglandmarksline.png Graphic file (type png)
  <use images/mglandmarksline.png>
-Package pdftex.def Info: images/mglandmarksline.png used on input line 219.
+Package pdftex.def Info: images/mglandmarksline.png used on input line 222.
 (pdftex.def)             Requested size: 180.67639pt x 225.84549pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--239
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
 
  []
 
 <images/siftc.jpg, id=46, 75.28125pt x 67.75313pt>
 File: images/siftc.jpg Graphic file (type jpg)
  <use images/siftc.jpg>
-Package pdftex.def Info: images/siftc.jpg used on input line 239.
+Package pdftex.def Info: images/siftc.jpg used on input line 242.
 (pdftex.def)             Requested size: 286.06822pt x 257.4614pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--239
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
 
  []
 
 File: images/siftc.jpg Graphic file (type jpg)
 <use images/siftc.jpg>
-Package pdftex.def Info: images/siftc.jpg used on input line 239.
+Package pdftex.def Info: images/siftc.jpg used on input line 242.
 (pdftex.def)             Requested size: 286.06822pt x 257.4614pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--263
+Underfull \hbox (badness 10000) in paragraph at lines 269--269
 
  []
 
@@ -1034,129 +1091,139 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--263
 File: images/method2.png Graphic file (type png)
 
 <use images/method2.png>
-Package pdftex.def Info: images/method2.png used on input line 263.
+Package pdftex.def Info: images/method2.png used on input line 269.
 (pdftex.def)             Requested size: 606.7654pt x 351.8135pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--263
+Underfull \hbox (badness 10000) in paragraph at lines 269--269
 
  []
 
 File: images/method2.png Graphic file (type png)
 <use images/method2.png>
-Package pdftex.def Info: images/method2.png used on input line 263.
+Package pdftex.def Info: images/method2.png used on input line 269.
 (pdftex.def)             Requested size: 606.7654pt x 351.8135pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--279
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--279
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--292
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--292
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--318
+Underfull \hbox (badness 10000) in paragraph at lines 329--329
 
  []
 
-<images/illustration.png, id=81, 407.5225pt x 159.59625pt>
+<images/illustration.png, id=79, 407.5225pt x 159.59625pt>
 File: images/illustration.png Graphic file (type png)
 
 <use images/illustration.png>
-Package pdftex.def Info: images/illustration.png used on input line 318.
+Package pdftex.def Info: images/illustration.png used on input line 329.
 (pdftex.def)             Requested size: 698.08543pt x 273.40187pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--318
+Underfull \hbox (badness 10000) in paragraph at lines 329--329
 
  []
 
 File: images/illustration.png Graphic file (type png)
 <use images/illustration.png>
-Package pdftex.def Info: images/illustration.png used on input line 318.
+Package pdftex.def Info: images/illustration.png used on input line 329.
 (pdftex.def)             Requested size: 698.08543pt x 273.40187pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--378
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
 
  []
 
-<images/md_rs.png, id=88, 150.5625pt x 225.84375pt>
+<images/md_rs.png, id=86, 150.5625pt x 225.84375pt>
 File: images/md_rs.png Graphic file (type png)
  <use images/md_rs.png>
-Package pdftex.def Info: images/md_rs.png used on input line 378.
-(pdftex.def)             Requested size: 255.95514pt x 383.93272pt.
+Package pdftex.def Info: images/md_rs.png used on input line 391.
+(pdftex.def)             Requested size: 271.01227pt x 406.51842pt.
 
-<images/md_chartlms.jpg, id=89, 892.33376pt x 545.03625pt>
+<images/md_chartlms.jpg, id=87, 892.33376pt x 545.03625pt>
 File: images/md_chartlms.jpg Graphic file (type jpg)
 
 <use images/md_chartlms.jpg>
-Package pdftex.def Info: images/md_chartlms.jpg used on input line 378.
-(pdftex.def)             Requested size: 713.86798pt x 436.0296pt.
+Package pdftex.def Info: images/md_chartlms.jpg used on input line 391.
+(pdftex.def)             Requested size: 535.40439pt x 327.02428pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--378
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
 
  []
 
 File: images/md_rs.png Graphic file (type png)
 <use images/md_rs.png>
-Package pdftex.def Info: images/md_rs.png used on input line 378.
-(pdftex.def)             Requested size: 255.95514pt x 383.93272pt.
+Package pdftex.def Info: images/md_rs.png used on input line 391.
+(pdftex.def)             Requested size: 271.01227pt x 406.51842pt.
 File: images/md_chartlms.jpg Graphic file (type jpg)
  <use images/md_chartlms.jpg>
-Package pdftex.def Info: images/md_chartlms.jpg used on input line 378.
-(pdftex.def)             Requested size: 713.86798pt x 436.0296pt.
+Package pdftex.def Info: images/md_chartlms.jpg used on input line 391.
+(pdftex.def)             Requested size: 535.40439pt x 327.02428pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 391--391
+Underfull \hbox (badness 10000) in paragraph at lines 407--407
 
  []
 
-<images/mg_rs.png, id=96, 150.5625pt x 225.84375pt>
+<images/mg_rs.png, id=94, 150.5625pt x 225.84375pt>
 File: images/mg_rs.png Graphic file (type png)
  <use images/mg_rs.png>
-Package pdftex.def Info: images/mg_rs.png used on input line 391.
-(pdftex.def)             Requested size: 255.95514pt x 383.93272pt.
+Package pdftex.def Info: images/mg_rs.png used on input line 407.
+(pdftex.def)             Requested size: 271.01227pt x 406.51842pt.
 
-<images/mg_chartlms.jpg, id=97, 731.73375pt x 508.90125pt>
+<images/mg_chartlms.jpg, id=95, 731.73375pt x 508.90125pt>
 File: images/mg_chartlms.jpg Graphic file (type jpg)
 
 <use images/mg_chartlms.jpg>
-Package pdftex.def Info: images/mg_chartlms.jpg used on input line 391.
-(pdftex.def)             Requested size: 574.41226pt x 399.48836pt.
+Package pdftex.def Info: images/mg_chartlms.jpg used on input line 407.
+(pdftex.def)             Requested size: 512.21013pt x 356.22844pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 391--391
+Underfull \hbox (badness 10000) in paragraph at lines 407--407
 
  []
 
 File: images/mg_rs.png Graphic file (type png)
 <use images/mg_rs.png>
-Package pdftex.def Info: images/mg_rs.png used on input line 391.
-(pdftex.def)             Requested size: 255.95514pt x 383.93272pt.
+Package pdftex.def Info: images/mg_rs.png used on input line 407.
+(pdftex.def)             Requested size: 271.01227pt x 406.51842pt.
 File: images/mg_chartlms.jpg Graphic file (type jpg)
  <use images/mg_chartlms.jpg>
-Package pdftex.def Info: images/mg_chartlms.jpg used on input line 391.
-(pdftex.def)             Requested size: 574.41226pt x 399.48836pt.
+Package pdftex.def Info: images/mg_chartlms.jpg used on input line 407.
+(pdftex.def)             Requested size: 512.21013pt x 356.22844pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 400--400
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 426--426
 
  []
 
 (./gretsi_poster.bbl)
-Underfull \hbox (badness 10000) in paragraph at lines 400--400
+Underfull \hbox (badness 10000) in paragraph at lines 426--426
 
  []
 
 (./gretsi_poster.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 406.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 432.
 
 Overfull \hbox (65.29169pt too wide) has occurred while \output is active
  [][] 
@@ -1172,55 +1239,49 @@ putational}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.406 \end{document}
+l.432 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.jolliffe2002principal}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.406 \end{document}
+l.432 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.leestimating}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.406 \end{document}
+l.432 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.lowe2004distinctive}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.406 \end{document}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{cite.shlens2014tutorial}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.406 \end{document}
+l.432 \end{document}
                      <./images/labri.png> <./images/ubordeaux.jpg> <./images/in
 ra.png> <./images/mlandmarksline.png> <./images/mglandmarksline.png> <./images/
 siftc.jpg> <./images/method2.png> <./images/illustration.png> <./images/md_rs.p
 ng> <./images/md_chartlms.jpg> <./images/mg_rs.png> <./images/mg_chartlms.jpg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 406.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 432.
 (./gretsi_poster.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 406.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 406.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 432.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 432.
 Package rerunfilecheck Info: File `gretsi_poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 406.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 432.
  ) 
 Here is how much of TeX's memory you used:
- 19368 strings out of 493304
- 369745 string characters out of 6139871
- 569707 words of memory out of 5000000
- 22380 multiletter control sequences out of 15000+600000
- 61961 words of font info for 63 fonts, out of 8000000 for 9000
+ 20112 strings out of 493304
+ 381520 string characters out of 6139871
+ 592094 words of memory out of 5000000
+ 23085 multiletter control sequences out of 15000+600000
+ 62651 words of font info for 65 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,17n,75p,447b,794s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,17n,75p,447b,841s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/kurier/ec-kurier.enc}{/usr/sha
 re/texlive/texmf-dist/fonts/enc/dvips/kurier/sy-kurier.enc}{/usr/share/texmf/fo
 nts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fonts/enc
@@ -1228,11 +1289,12 @@ nts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fonts/enc
 er/rm-kurier.enc}</usr/share/texlive/texmf-dist/fonts/type1/nowacki/kurier/kuri
 erb.pfb></usr/share/texlive/texmf-dist/fonts/type1/nowacki/kurier/kurierr.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/nowacki/kurier/kurierri.pfb></usr/sha
-re/texmf/fonts/type1/public/cm-super/sfbtl10.pfb>
-Output written on gretsi_poster.pdf (1 page, 683168 bytes).
+re/texmf/fonts/type1/public/cm-super/sfbtl10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on gretsi_poster.pdf (1 page, 689332 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
- 373 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 215 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 391 words of extra memory for PDF output out of 10000 (max. 10000000)
 

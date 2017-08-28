@@ -105,6 +105,8 @@
 \usepackage{float}
 %% add your packages here
 \usepackage{hyperref}
+\usepackage{pifont}
+\usepackage[export]{adjustbox}
 
 \def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
 
@@ -157,9 +159,9 @@
   {Context}%
   {
 	  \begin{itemize}
-   		 \item Morphometry analysis is a way to characterize the shape variations of the organisms,
+   		 \item \textbf{Morphometry} analysis is a way to characterize the shape variations of the organisms,
    		 \item Morphometric characteristics have been used to evaluate the evolution of an organism, by finding new or sharpening definition of old one,
-   		 \item Morphometrics are also used to classify the objects in different groups.
+   		 \item \textbf{Morphometrics} are also used to \textbf{classify} the objects in different groups.
     	  \end{itemize}
 %    	  \begin{tikzfigure}
 %    	  	\centering
@@ -204,10 +206,11 @@
   \blocknode{Manual landmarks}%
   {
   	\begin{itemize}
-  		\item Morphometric landmarks are points of interest in the biological object,
+  		\item Morphometric landmarks are points of interest in biological object,
   		\item Landmarks characterize specificities through the shape \\ most often linked to biological information,
-  		\item They are usually defined by biologists manually. 
-  		\item Images show manual landmarks in beetle mandibles \\ belonging to our sample. How to \textcolor{red}{locate} the landmarks \\ \textcolor{red}{\textbf{automatically}}?
+  		\item They are usually \textbf{defined} by biologists \textbf{manually}. 
+  		\item Images show manual landmarks in \textbf{beetle mandibles} \\ belonging to our sample. 
+  		\item How to \textcolor{red}{locate} the landmarks \textcolor{red}{\textbf{automatically}}?
   	\end{itemize}
   	 %\begin{tikzfigure}[]
     	 % 	\centering
@@ -231,7 +234,7 @@
     			\item Orientation assigment
     			\item Keypoint descriptor
     		\end{itemize}
-    		\item \textbf{\underline{Limitation:}} The obtained results from original SIFT method \\ set many landamark candidates.
+    		\item \textbf{\underline{Limitation:}} The obtained results from original SIFT method \\ set \textcolor{red}{many landamark candidates}.
 	    \item \textbf{\underline{Solution:}} Reducing the searching space before computing\\
     the SIFT descriptors.  
     \end{itemize} 
@@ -248,10 +251,13 @@
 			\item Model manual landmarks
 			\item Scene image
 		\end{itemize}		  		
-  		\item \textbf{\underline{Output:}} landmarks of scene image
+  		\item \textbf{\underline{Output:}} 
+		\begin{itemize}
+			\item Landmarks of scene image
+		\end{itemize}		  				
   		\item \textbf{\underline{Steps:}}
   		\begin{itemize}
-  			\item Shape identification \\(segmentation and registration)
+  			\item Shape identification: \\ segmentation and registration
   			\item SIFT and landmarks
   		\end{itemize}
   	\end{itemize}
@@ -259,7 +265,7 @@
     	%  	\centering
     	%  	\includegraphics[scale=.5]{images/method2}
     	%  \end{tikzfigure}
-    \Put(14.4,11){\includegraphics[scale=.5]{images/method2}}
+    \Put(14.4,13){\includegraphics[scale=.5]{images/method2}}
   }
   
   
@@ -269,26 +275,30 @@
     
   %  abc
   %  }
+  \newcommand{\itemcolor}[1]{% Update list item colour
+  	\renewcommand{\makelabel}[1]{\color{#1}\hfil ##1}}
  \blocknode%
   {Segmentation}%
   {
-    \begin{enumerate}
-		\item Converting the image to binary one by applying a threshold determined by histogram analysis\cite{leestimating}.
+    \begin{dingautolist}{182}
+    		\itemcolor{colorone}
+		\item Converting the image to binary one by applying a \textbf{threshold} determined by histogram analysis\cite{leestimating}.
 		\item Contours points are extracted by Canny algorithm\cite{canny1986computational}. The thresholds ratio in Canny: $T_{lower} = (1/3) \times T_{upper}$, in which $T_{lower}$ equals to the threshold value in step 1.
-    \end{enumerate}
+    \end{dingautolist}
   }
   
   \blocknode{Registration}%
-  {   Model and scene image are segmented to extract the contours points. The contours points are registered by applying Principal Component Analysis\cite{jolliffe2002principal, shlens2014tutorial} Iteration (PCAI).
-    \begin{enumerate}
-    	\item Compute the centroid point and principal axis of each list of contour point,
-    	\item Compute the transformation values between two lists of contour points,
-    	\item Register two lists of contour points,
-    	\item Sort the contour points of scene image followed y-direction,
-    	\item Select a subset of contour points of scene image and repeat step 1,
-    	\item PCAI stop automatically when the angle difference between two 
+  {   Model and scene images are segmented to extract the contours points. The contours points are registered by applying Principal Component Analysis\cite{jolliffe2002principal} Iteration (PCAI).
+ \begin{dingautolist}{182}
+    		\itemcolor{colorone}
+    		\item Compute the centroid point and principal axis of each list of contour points,
+    		\item Compute the translation and rotation values between two lists of contour points,
+    		\item Register the two lists of contour points,
+    		\item Sort the contour points of scene image followed y-direction,
+    		\item Select a subset of contour points of scene image and repeat step 1,
+    		\item PCAI stop automatically when the angle difference between two 
     	lists of contour points is less than $1.5$ degree.
-    \end{enumerate}
+    \end{dingautolist}
   }
   %%%%%%%%%%%%% NEW COLUMN %%%%%%%%%%%%%%% 
   \startsecondcolumn 
@@ -306,15 +316,16 @@
     	 \centering
     	 \includegraphics[width=0.7\textwidth]{images/illustration}
     \end{tikzfigure}
-    \begin{enumerate}
-    	\item A patch $P_m$ is initialized at each manual landmark of model image (size of $9\times9$),
-    	\item Calculate the SIFT descriptor for $P_m$,
-    	\item At the same position in the scene image, a patch $P_s$ is created (size of $36\times36$),
-    	\item For each pixel in $P_s$, a patch $P'_s$ is extracted with the same size of $P_m$,
-    	\item Calculate the SIFT descriptor for all $P'_s$,
-    	\item Compute the distance between the descriptor of $P_m$ and each $P'_m$,
-    	\item At the end, the pixel that has the minimum distance with $P_m$ is kept.
-    \end{enumerate}
+    \begin{dingautolist}{182}
+    		\itemcolor{colorone}
+    		\item A \textbf{patch} $P_m$ is initialized at each manual landmark of model image (size of $9\times9$),
+    		\item Calculate the SIFT descriptor for $P_m$,
+    		\item At the same position in the scene image, a patch $P_s$ is created (size of $36\times36$),
+    		\item For each pixel in $P_s$, a patch $P'_s$ is extracted with the same size of $P_m$,
+    		\item Calculate the SIFT descriptor for all $P'_s$,
+    		\item Compute the distance between the descriptor of $P_m$ and each $P'_m$,
+    		\item At the end, the pixel that has the minimum distance with $P_m$ is kept.
+    \end{dingautolist}
   }
 
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
@@ -370,25 +381,40 @@
   		\item Highest accuracy: $1^{st}$ landmark with $98.62\%$
   		\item Lowest accuracy: $13^{th}, 14^{th}$ landmark with app. $75\%$
   	\end{itemize}
-  	\begin{tikzfigure}[]
-    	\centering
-    	\includegraphics[scale=1.7]{images/md_rs}~~
-    	\includegraphics[scale=.8]{images/md_chartlms}
-    \end{tikzfigure}
+  	\Put(21.5,-21){\includegraphics[scale=1.8]{images/md_rs}}
+  	\Put(2,-21.5){\includegraphics[scale=.6]{images/md_chartlms}}
+  	\vspace{10cm}
+  	%\begin{tikzfigure}[]
+    	%	\includegraphics[scale=1.7]{images/md_rs}~~
+    	%	\includegraphics[scale=.6, left]{images/md_chartlms}
+    %\end{tikzfigure}
   }
 
 \blocknode {Results on left mandibles}
   {
   \begin{itemize}
   		\item Highest accuracy: $1^{st}$ landmark with $93.01\%$
-  		\item Lowest accuracy: $11^{th}, 12^{th}$ and $16^{th}$ landmark from  $60\%$ to app. $63\%$
+  		\item Lowest accuracy: $11^{th}, 12^{th}$ and $16^{th}$ landmark \\ from  $60\%$ to app. $63\%$
   	\end{itemize}
-  	\begin{tikzfigure}[]
-    	\centering
-    	\includegraphics[scale=1.7]{images/mg_rs}~~
-    	\includegraphics[scale=.785]{images/mg_chartlms}
-    \end{tikzfigure}
+  	\Put(22,-22){\includegraphics[scale=1.8]{images/mg_rs}}
+  	\Put(3,-22.5){\includegraphics[scale=0.7]{images/mg_chartlms}}
+  	\vspace{10.7cm}
+  	%\begin{tikzfigure}[]
+    	%\centering
+    	%\includegraphics[scale=1.7]{images/mg_rs}~~
+    	%\includegraphics[scale=.785, left]{images/mg_chartlms}
+    %\end{tikzfigure}
   }
+%%%%%%%%%% ------------------------------------------ %%%%%%%%%%
+\blocknode{Conclusions}
+{
+	\begin{itemize}
+		\item A solution based on SIFT descriptor for landmark estimation is presented,
+		\item The results show that method \textbf{succeed in locating} all landmarks in  request images,
+		\item The accuracy of method is sufficient to be \textbf{proposed to biologists} as a \textbf{replacement of manual positioning}.
+	\end{itemize}
+}
+
 %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
   \blocknode%
   {Bibliography}%
