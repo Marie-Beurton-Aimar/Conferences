@@ -159,9 +159,9 @@
   {Context}%
   {
 	  \begin{itemize}
-   		 \item \textbf{Morphometry} analysis is a way to characterize the shape variations of the organisms,
+   		 \item \textbf{\textcolor{blocktitletextcolor}{Morphometry}} analysis is a way to characterize the shape variations of the organisms,
    		 \item Morphometric characteristics have been used to evaluate the evolution of an organism, by finding new or sharpening definition of old one,
-   		 \item \textbf{Morphometrics} are also used to \textbf{classify} the objects in different groups.
+   		 \item \textcolor{blocktitletextcolor}{\textbf{Morphometrics}} are also used to \textcolor{blocktitletextcolor}{\textbf{classify}} the objects in different groups.
     	  \end{itemize}
 %    	  \begin{tikzfigure}
 %    	  	\centering
@@ -208,8 +208,8 @@
   	\begin{itemize}
   		\item Morphometric landmarks are points of interest in biological object,
   		\item Landmarks characterize specificities through the shape \\ most often linked to biological information,
-  		\item They are usually \textbf{defined} by biologists \textbf{manually}. 
-  		\item Images show manual landmarks in \textbf{beetle mandibles} \\ belonging to our sample. 
+  		\item They are usually \textcolor{blocktitletextcolor}{\textbf{defined}} by biologists \textcolor{blocktitletextcolor}{\textbf{manually}}.,
+  		\item Images show manual landmarks in \textcolor{blocktitletextcolor}{\textbf{beetle mandibles}} \\ belonging to our sample. 
   		\item How to \textcolor{red}{locate} the landmarks \textcolor{red}{\textbf{automatically}}?
   	\end{itemize}
   	 %\begin{tikzfigure}[]
@@ -226,13 +226,13 @@
   \blocknode{SIFT} %
   {
   	\begin{itemize}
-  		\item SIFT\cite{lowe2004distinctive} is used to extract distinctive features from the images. 
+  		\item SIFT descriptor\cite{lowe2004distinctive} is used to extract features from images. 
   It includes four steps:
 	    \begin{itemize}
     			\item Scale-space extrema detection
     			\item Keypoints localization
     			\item Orientation assigment
-    			\item Keypoint descriptor
+    			\item Keypoints descriptor
     		\end{itemize}
     		\item \textbf{\underline{Limitation:}} The obtained results from original SIFT method \\ set \textcolor{red}{many landamark candidates}.
 	    \item \textbf{\underline{Solution:}} Reducing the searching space before computing\\
@@ -282,13 +282,13 @@
   {
     \begin{dingautolist}{182}
     		\itemcolor{colorone}
-		\item Converting the image to binary one by applying a \textbf{threshold} determined by histogram analysis\cite{leestimating}.
+		\item Converting the image to binary one by applying a \textcolor{blocktitletextcolor}{\textbf{threshold}} determined by histogram analysis\cite{leestimating}.
 		\item Contours points are extracted by Canny algorithm\cite{canny1986computational}. The thresholds ratio in Canny: $T_{lower} = (1/3) \times T_{upper}$, in which $T_{lower}$ equals to the threshold value in step 1.
     \end{dingautolist}
   }
   
   \blocknode{Registration}%
-  {   Model and scene images are segmented to extract the contours points. The contours points are registered by applying Principal Component Analysis\cite{jolliffe2002principal} Iteration (PCAI).
+  {   Model and scene images are segmented to extract the contours points. The contours points are registered by applying \textbf{P}rincipal \textbf{C}omponent \textbf{A}nalysis\cite{jolliffe2002principal} \textbf{I}teration (PCAI).
  \begin{dingautolist}{182}
     		\itemcolor{colorone}
     		\item Compute the centroid point and principal axis of each list of contour points,
@@ -318,13 +318,13 @@
     \end{tikzfigure}
     \begin{dingautolist}{182}
     		\itemcolor{colorone}
-    		\item A \textbf{patch} $P_m$ is initialized at each manual landmark of model image (size of $9\times9$),
-    		\item Calculate the SIFT descriptor for $P_m$,
+    		\item A \textcolor{blocktitletextcolor}{\textbf{patch}} $P_m$ is initialized at each manual landmark of model image (size of $9\times9$),
+    		\item Calculating the SIFT descriptor for $P_m$,
     		\item At the same position in the scene image, a patch $P_s$ is created (size of $36\times36$),
-    		\item For each pixel in $P_s$, a patch $P'_s$ is extracted with the same size of $P_m$,
-    		\item Calculate the SIFT descriptor for all $P'_s$,
-    		\item Compute the distance between the descriptor of $P_m$ and each $P'_m$,
-    		\item At the end, the pixel that has the minimum distance with $P_m$ is kept.
+    		\item For each pixel in $P_s$, a patch $P'_s$ is extracted with the same size than $P_m$,
+    		\item Calculating the SIFT descriptor for all $P'_s$,
+    		\item Computing the distance between the descriptor of $P_m$ and each $P'_m$,
+    		\item At the end, the pixel that has the \textcolor{blocktitletextcolor}{\textbf{minimum distance}} with $P_m$ is kept.
     \end{dingautolist}
   }
 
@@ -410,8 +410,8 @@
 {
 	\begin{itemize}
 		\item A solution based on SIFT descriptor for landmark estimation is presented,
-		\item The results show that method \textbf{succeed in locating} all landmarks in  request images,
-		\item The accuracy of method is sufficient to be \textbf{proposed to biologists} as a \textbf{replacement of manual positioning}.
+		\item The results show that method \textcolor{blocktitletextcolor}{\textbf{succeed in locating}} all landmarks in  request images,
+		\item The accuracy of method is sufficient to be \textcolor{blocktitletextcolor}{\textbf{proposed to biologists}} as a \textcolor{blocktitletextcolor}{\textbf{replacement of manual positioning}}, and to characterize the shape.
 	\end{itemize}
 }
 
