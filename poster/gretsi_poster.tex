@@ -159,9 +159,9 @@
   {Context}%
   {
 	  \begin{itemize}
-   		 \item \textbf{\textcolor{blocktitletextcolor}{Morphometry}} analysis is a way to characterize the shape variations of the organisms,
+   		 \item \textcolor{colorthree}{\textbf{Morphometry}} analysis is a way to characterize the shape variations of the organisms,
    		 \item Morphometric characteristics have been used to evaluate the evolution of an organism, by finding new or sharpening definition of old one,
-   		 \item \textcolor{blocktitletextcolor}{\textbf{Morphometrics}} are also used to \textcolor{blocktitletextcolor}{\textbf{classify}} the objects in different groups.
+   		 \item \textcolor{colorthree}{\textbf{Morphometrics}} are also used to \textcolor{colorthree}{\textbf{classify}} the objects in different groups.
     	  \end{itemize}
 %    	  \begin{tikzfigure}
 %    	  	\centering
@@ -208,17 +208,20 @@
   	\begin{itemize}
   		\item Morphometric landmarks are points of interest in biological object,
   		\item Landmarks characterize specificities through the shape \\ most often linked to biological information,
-  		\item They are usually \textcolor{blocktitletextcolor}{\textbf{defined}} by biologists \textcolor{blocktitletextcolor}{\textbf{manually}}.,
-  		\item Images show manual landmarks in \textcolor{blocktitletextcolor}{\textbf{beetle mandibles}} \\ belonging to our sample. 
-  		\item How to \textcolor{red}{locate} the landmarks \textcolor{red}{\textbf{automatically}}?
+  		\item They are usually \textcolor{colorthree}{\textbf{defined}} by biologists \textcolor{colorthree}{\textbf{manually}},
+  		\item Images show manual landmarks in \textcolor{colorthree}{\textbf{beetle mandibles}} \\ belonging to our sample. 
+  		
   	\end{itemize}
+  	\Put(23,7){\includegraphics[scale=.3]{images/mlandmarksline}}
+    \Put(29,7){\includegraphics[scale=.3]{images/mglandmarksline}}
+    \vspace{1.2cm}
+  	\hspace{1.5cm}{\large{\textcolor{colorone}{\textbf{How to locate the landmarks automatically}?}}}
   	 %\begin{tikzfigure}[]
     	 % 	\centering
     	 %	\includegraphics[scale=.28]{images/mlandmarksline}~~~~~~
     	 % 	\includegraphics[scale=.28]{images/mglandmarksline}
     	 % \end{tikzfigure}
-    \Put(23,9){\includegraphics[scale=.3]{images/mlandmarksline}}
-    \Put(29,9){\includegraphics[scale=.3]{images/mglandmarksline}}
+    
   }
   
 
@@ -234,7 +237,7 @@
     			\item Orientation assigment
     			\item Keypoints descriptor
     		\end{itemize}
-    		\item \textbf{\underline{Limitation:}} The obtained results from original SIFT method \\ set \textcolor{red}{many landamark candidates}.
+    		\item \textbf{\underline{Limitation:}} The obtained results from original SIFT method \\ set \textcolor{colorthree}{\textbf{many landamark candidates}}.
 	    \item \textbf{\underline{Solution:}} Reducing the searching space before computing\\
     the SIFT descriptors.  
     \end{itemize} 
@@ -282,7 +285,7 @@
   {
     \begin{dingautolist}{182}
     		\itemcolor{colorone}
-		\item Converting the image to binary one by applying a \textcolor{blocktitletextcolor}{\textbf{threshold}} determined by histogram analysis\cite{leestimating}.
+		\item Converting the image to binary one by applying a \textcolor{colorthree}{\textbf{threshold}} determined by histogram analysis\cite{leestimating}.
 		\item Contours points are extracted by Canny algorithm\cite{canny1986computational}. The thresholds ratio in Canny: $T_{lower} = (1/3) \times T_{upper}$, in which $T_{lower}$ equals to the threshold value in step 1.
     \end{dingautolist}
   }
@@ -292,12 +295,12 @@
  \begin{dingautolist}{182}
     		\itemcolor{colorone}
     		\item Compute the centroid point and principal axis of each list of contour points,
-    		\item Compute the translation and rotation values between two lists of contour points,
-    		\item Register the two lists of contour points,
+    		\item Compute the \textcolor{colorthree}{\textbf{translation}} and \textcolor{colorthree}{\textbf{rotation}} values between two lists of contour points,
+    		\item \textcolor{colorthree}{\textbf{Register}} the two lists of contour points,
     		\item Sort the contour points of scene image followed y-direction,
     		\item Select a subset of contour points of scene image and repeat step 1,
-    		\item PCAI stop automatically when the angle difference between two 
-    	lists of contour points is less than $1.5$ degree.
+    		\item PCAI stop automatically when the \textcolor{colorthree}{\textbf{angle difference}} between two 
+    	lists of contour points is less than \textcolor{colorthree}{\textbf{$1.5$ degree}}.
     \end{dingautolist}
   }
   %%%%%%%%%%%%% NEW COLUMN %%%%%%%%%%%%%%% 
@@ -318,13 +321,13 @@
     \end{tikzfigure}
     \begin{dingautolist}{182}
     		\itemcolor{colorone}
-    		\item A \textcolor{blocktitletextcolor}{\textbf{patch}} $P_m$ is initialized at each manual landmark of model image (size of $9\times9$),
+    		\item A \textcolor{colorthree}{\textbf{patch}} $P_m$ is initialized at each manual landmark of model image (size of $9\times9$),
     		\item Calculating the SIFT descriptor for $P_m$,
     		\item At the same position in the scene image, a patch $P_s$ is created (size of $36\times36$),
     		\item For each pixel in $P_s$, a patch $P'_s$ is extracted with the same size than $P_m$,
     		\item Calculating the SIFT descriptor for all $P'_s$,
     		\item Computing the distance between the descriptor of $P_m$ and each $P'_m$,
-    		\item At the end, the pixel that has the \textcolor{blocktitletextcolor}{\textbf{minimum distance}} with $P_m$ is kept.
+    		\item At the end, the pixel that has the \textcolor{colorthree}{\textbf{minimum distance}} with $P_m$ is kept.
     \end{dingautolist}
   }
 
@@ -378,7 +381,7 @@
   \blocknode {Results on right mandibles}
   {
   	\begin{itemize}
-  		\item Highest accuracy: $1^{st}$ landmark with $98.62\%$
+  		\item Highest accuracy: $1^{st}$ landmark with \textcolor{colorthree}{\textbf{$98.62\%$}}
   		\item Lowest accuracy: $13^{th}, 14^{th}$ landmark with app. $75\%$
   	\end{itemize}
   	\Put(21.5,-21){\includegraphics[scale=1.8]{images/md_rs}}
@@ -393,7 +396,7 @@
 \blocknode {Results on left mandibles}
   {
   \begin{itemize}
-  		\item Highest accuracy: $1^{st}$ landmark with $93.01\%$
+  		\item Highest accuracy: $1^{st}$ landmark with \textcolor{colorthree}{\textbf{$93.01\%$}}
   		\item Lowest accuracy: $11^{th}, 12^{th}$ and $16^{th}$ landmark \\ from  $60\%$ to app. $63\%$
   	\end{itemize}
   	\Put(22,-22){\includegraphics[scale=1.8]{images/mg_rs}}
@@ -410,8 +413,8 @@
 {
 	\begin{itemize}
 		\item A solution based on SIFT descriptor for landmark estimation is presented,
-		\item The results show that method \textcolor{blocktitletextcolor}{\textbf{succeed in locating}} all landmarks in  request images,
-		\item The accuracy of method is sufficient to be \textcolor{blocktitletextcolor}{\textbf{proposed to biologists}} as a \textcolor{blocktitletextcolor}{\textbf{replacement of manual positioning}}, and to characterize the shape.
+		\item The results show that method \textcolor{colorthree}{\textbf{succeed in locating}} all landmarks in  request images,
+		\item The accuracy of method is sufficient to be \textcolor{colorthree}{\textbf{proposed to biologists}} as a \textcolor{colorthree}{\textbf{replacement of manual positioning}}, and to characterize the shape.
 	\end{itemize}
 }
 
